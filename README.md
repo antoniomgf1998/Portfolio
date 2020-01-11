@@ -11,7 +11,9 @@ _**Note**: One of the python packages used for visualizations preceding the fina
 
 <!--ts-->
    * [Table of contents](#table-of-contents)
-   * [Introduction to the Project](#Introduction)
+   * [Introduction](#Introduction-to-the-project)
+      * [Project's Value](#projects-value)
+      * [What is an anomaly?](#what-is-an-anomaly)
    * [Usage](#usage)
       * [STDIN](#stdin)
       * [Local files](#local-files)
@@ -25,7 +27,8 @@ _**Note**: One of the python packages used for visualizations preceding the fina
 <!--te-->
 
 - ### Introduction to the project
-
+##### Project's Value
 	Over the past decades there has been a significant rise in maritime traffic. This means that managing this traffic is an increasingly difficult task due to the amount of data that needs to be processed.
 	Unfortunately, by the time the sea routes are becoming more congested, most of the managing methods and prococols (traditionally hand-operated) are overwhelming operators arising a descent on its efficiency.
-	Data science has a lot to do to improve the maritime services and vigilance and Anomaly Detection is a really valuable field to put research efforts, primarily because of a fact: Unguarded maritime traffic can lead to ilegal trade, collissions that can supose high costs
+	Data science has a lot to do to improve the maritime services and vigilance and Anomaly Detection is a really valuable field to put research efforts, primarily because of a fact: Unguarded maritime traffic can lead to ilegal trade, fish poaching, collissions that can supose high costs and a long list preventable troubles on harbours.
+	There is a lot of literature on the topic but as it is a highly transversal issue, the methods to detect anomalies are not standarized and depend much about the field to which we want to apply it.
