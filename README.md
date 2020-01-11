@@ -34,4 +34,4 @@ _**Note**: One of the python packages used for visualizations preceding the fina
 ### Codebook
 &emsp;It a CSV file with 10 columns. The file is 3.9GBs and contains 4.2 million rows. The origin of the data is AIS data captured by Saab, integrated with their own radar data.
 
-&emsp; A codebook with some basic details about the data can be found [here](#Codebook.ipynb).
+&emsp; A codebook with some basic details about the data can be found [here](#Portfolio/Codebook.ipynb).
