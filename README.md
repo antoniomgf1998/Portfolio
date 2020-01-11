@@ -12,7 +12,8 @@ _**Note**: One of the python packages used for visualizations preceding the fina
    * [Introduction](#Introduction-to-the-project)
       * [Project's Value](#projects-value)
       * [What is an anomaly?](#what-is-an-anomaly)
-
+   * [About the data](#about-the-data)
+      * [Codebook](#codebook)
 ## Introduction to the project
 ### Project's Value
 <p>&emsp;Over the past decades there has been a significant rise in maritime traffic. This means that managing this traffic is an increasingly difficult task due to the amount of data that needs to be processed. Unfortunately, by the time the sea routes are becoming more congested, most of the managing methods and prococols (traditionally hand-operated) are overwhelming operators arising a descent on its efficiency.</p>
@@ -27,4 +28,6 @@ _**Note**: One of the python packages used for visualizations preceding the fina
 1. Three/four times out of the standard deviation when following a route.
 2. Two times out of the standard deviation particularily in terms of speed.
 3. Making sudden course changes/movements.
-
+## About the data
+### Codebook
+<p>&emsp;It a CSV file with 10 columns. The file is 3.9GBs and contains 4.2 million rows. The origin of the data is AIS data captured by Saab, integrated with their own radar data.</p>
