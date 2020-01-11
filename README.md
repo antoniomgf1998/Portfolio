@@ -26,9 +26,14 @@ _**Note**: One of the python packages used for visualizations preceding the fina
    * [Dependency](#dependency)
 <!--te-->
 
-- ### Introduction to the project
-##### Project's Value
-	Over the past decades there has been a significant rise in maritime traffic. This means that managing this traffic is an increasingly difficult task due to the amount of data that needs to be processed.
-	Unfortunately, by the time the sea routes are becoming more congested, most of the managing methods and prococols (traditionally hand-operated) are overwhelming operators arising a descent on its efficiency.
-	Data science has a lot to do to improve the maritime services and vigilance and Anomaly Detection is a really valuable field to put research efforts, primarily because of a fact: Unguarded maritime traffic can lead to ilegal trade, fish poaching, collissions that can supose high costs and a long list preventable troubles on harbours.
-	There is a lot of literature on the topic but as it is a highly transversal issue, the methods to detect anomalies are not standarized and depend much about the field to which we want to apply it.
+## Introduction to the project
+### Project's Value
+<p>&emsp;Over the past decades there has been a significant rise in maritime traffic. This means that managing this traffic is an increasingly difficult task due to the amount of data that needs to be processed. Unfortunately, by the time the sea routes are becoming more congested, most of the managing methods and prococols (traditionally hand-operated) are overwhelming operators arising a descent on its efficiency.</p>
+<p>&emsp;Data science has a lot to do to improve the maritime services and vigilance and Anomaly Detection is a really valuable field to put research efforts, primarily because of a fact: Unguarded maritime traffic can lead to ilegal trade, fish poaching, collissions that can supose high costs and a long list preventable troubles on harbours.</p>
+<p>&emsp;There is a lot of literature on the topic but as it is a highly transversal issue, the methods to detect anomalies are not standarized and depend much about the field to which we want to apply it.</p>
+
+### What is an anomaly?
+<p>&emsp;In computational terms a maritime vessel anomaly can be defined as a deviation from the normal behavior of a ship under previously studied circunstances. This delimitation of the subject can seem to be not accurate enough but that is why this is an up-to-date topic. Nevertheless and with this subjacent concept present, during the literature study phase of the project we could reach more mathematical clarity arround the concept. According to the product owner, the current definition about anomaly detection in Saab is standarized as</p>
+- 3 or 4 times out of the standard deviation when following a route.
+- 2 times out of the standard deviation particularily in terms of speed.
+- Making sudden course changes / movements.
