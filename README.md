@@ -9,22 +9,10 @@ _**Note**: One of the python packages used for visualizations preceding the fina
 
 ## Table of contents
 
-<!--ts-->
    * [Table of contents](#table-of-contents)
    * [Introduction](#Introduction-to-the-project)
       * [Project's Value](#projects-value)
       * [What is an anomaly?](#what-is-an-anomaly)
-   * [Usage](#usage)
-      * [STDIN](#stdin)
-      * [Local files](#local-files)
-      * [Remote files](#remote-files)
-      * [Multiple files](#multiple-files)
-      * [Combo](#combo)
-      * [Auto insert and update TOC](#auto-insert-and-update-toc)
-      * [GitHub token](#github-token)
-   * [Tests](#tests)
-   * [Dependency](#dependency)
-<!--te-->
 
 ## Introduction to the project
 ### Project's Value
@@ -34,6 +22,7 @@ _**Note**: One of the python packages used for visualizations preceding the fina
 
 ### What is an anomaly?
 <p>&emsp;In computational terms a maritime vessel anomaly can be defined as a deviation from the normal behavior of a ship under previously studied circunstances. This delimitation of the subject can seem to be not accurate enough but that is why this is an up-to-date topic. Nevertheless and with this subjacent concept present, during the literature study phase of the project we could reach more mathematical clarity arround the concept. According to the product owner, the current definition about anomaly detection in Saab is standarized as</p>
-1. Three/four times out of the standard deviation when following a route.
-2. Two times out of the standard deviation particularily in terms of speed.
-3. Making sudden course changes/movements.
+
+> 1. Three/four times out of the standard deviation when following a route.
+> 2. Two times out of the standard deviation particularily in terms of speed.
+> 3. Making sudden course changes/movements.
