@@ -56,6 +56,7 @@ _**Note**: One of the python packages used for visualizations preceding the fina
 &emsp;At the beginning of the project we had some trouble to get in touch with the data, as we are dealing with confidential data, we were involved in a lot of burocracy delays within the first weeks due to the signing and processing of the NDA's and moving the data to the University servers. 
 &emsp;It was not until week 6 when we received the real data. During that period I had a lot of curiosity about the data so I tried to encourage the team to use a Kaggle dataset to start preparing some visualizations as AIS data is the most common way to identify ships all arround the worls and the scalability of the work that we would do was high. With that on mind, we started doing some visualizations on the australian dataset that can be followed [here](https://www.operations.amsa.gov.au/Spatial/DataServices/DigitalData). As can be seen in the link, the information is directly provided by the Australian Government and its free to access it. 
 &emsp;Finally we got the access to the data and, as planned, it was really easy to change the datatype.
+&emsp;To start hands-on the data I made several simple plots such as the ones present in [this notebook](https://github.com/antoniomgf1998/Portfolio/blob/master/Statistics of the data.ipynb)
 
 #### iPyLeaflet and iPyWidgets
 &emsp;I have been in charge of all the visualizations during the project until developing the prototype when our needs of changed to offline mapping. On the first days I started looking for a package on the internet to visualize our data. Finally I chose [ipyleaflet](https://ipyleaflet.readthedocs.io/en/latest/).
@@ -98,16 +99,23 @@ _**Note**: Most of the visualizations are too big to get uploaded to this repo a
 &emsp;**[Dynamic visualization on Hong Kong - reduced area dataset with random color and details popups (notebook)](https://github.com/antoniomgf1998/Portfolio/blob/master/data_visualization_dynamic.ipynb)**
 
 ###### 3.1. Density map
-&emsp;Visualization of the overlaping routes to identify the most concurrent routes (The darker --> The 
+
+&emsp;Visualization of the overlaping routes to identify the most concurrent routes (The darker --> The more populated path). All routes were plotted with a transparency of 0.5.
+
 ![Density Map](https://github.com/antoniomgf1998/Portfolio/blob/master/density_map_plot_reduced_area.PNG)
 
 ###### 3.2. Testing visualize_by_id function results (prototype v.0.)
+
+This function was aimed to visualize in red, green and orange all the ship routes. So, whenever we got a model to work we could just specify what ships were anomalous (red), suspicious to be anomalous (orange) and within normality (green). The image below does not have any model supporting its conclusions, it is just a test.
 
 ![Preparing the Prototype (initial version)](https://github.com/antoniomgf1998/Portfolio/blob/master/prototype_v1.PNG)
 
 ## Models
 &emsp;During the semester we have tried several models to detect anomalies in our dataset
 ### Dynamic Markov Models
-
+&emsp;Inspired by [this](https://www.sciencedirect.com/science/article/pii/S0020025517307302?via%3Dihub) paper I started my learning on markov Models after the preprocessing phase to start having some results and notions about the main issues when trying to implement models to our goals with the Hong Kong data.
+&emsp;Markov Models, framed in probability theory, is a stochastic model to model randomly changing mathematical systems. For example, given a system with some defined states over which elements flow, if we correctly define the probability of moving from one state to another according to a training sample, we will be able to detect transitions that _a priori_ would be rare (rated with low probability) or in other words: **anomalies**.
+&emsp;Further information can be found in [this](https://github.com/antoniomgf1998/Portfolio/blob/master/Dynamic_Markov_Models.pdf) presentation I prepared to show the rest of the grouo how dynamic markov models could be applied to our project.
+&emsp;Summarizing the main idea of the presentation that supports the fact that Dynamic Markov fit with our objective (detecting anomalies) I must say that
 
 ### Recurrent Neural Networks
