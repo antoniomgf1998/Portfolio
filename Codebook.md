@@ -22,3 +22,6 @@ The origin of the data is AIS data captured by Saab, integrated with their own r
 | 8        | breadth     | Breadth of the vessel               | 0-200                                | float    | float           | numerical             | predictor        | count    4.250187e+07 <br/> mean     9.046423e+00 <br/> std      9.524336e+00 <br/> min      0.000000e+00 <br/> 25%      2.600000e+00 <br/> 50%      6.000000e+00 <br/> 75%      1.310000e+01 <br/> max      2.000000e+02 |
 | 9        | speed       | Speed of the vessel in meters / sec | 0-2786                               | float    | float           | numerical             | predictor        | count    4.250187e+07 <br/> mean     3.060874e+00 <br/> std      1.154951e+01 <br/> min      0.000000e+00 <br/> 25%      5.700000e-01 <br/> 50%      2.550000e+00 <br/> 75%      3.880000e+00 <br/> max      2.786550e+03 |
 | 10       | vesseltype  | Type of vessel                      | 0-8                                  | float    | int             | categorical           | -                | count    4.250187e+07 <br/> mean     6.032885e-01 <br/> std      2.112428e+00 <br/> min      0.000000e+00 <br/> 25%      0.000000e+00 <br/> 50%      0.000000e+00 <br/> 75%      0.000000e+00 <br/> max      8.000000e+00 |
+
+
+# [Back to README](README.md#codebook)
