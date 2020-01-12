@@ -47,5 +47,12 @@ _**Note**: One of the python packages used for visualizations preceding the fina
 &emsp;At the beginning of the project we had some trouble to get in touch with the data, as we are dealing with confidential data, we were involved in a lot of burocracy delays within the first weeks due to the signing and processing of the NDA's and moving the data to the University servers. 
 &emsp;It was not until week 6 when we received the real data. During that period I had a lot of curiosity about the data so I tried to encourage the team to use a Kaggle dataset to start preparing some visualizations as AIS data is the most common way to identify ships all arround the worls and the scalability of the work that we would do was high. With that on mind, we started doing some visualizations on the australian dataset that can be followed [here](https://www.operations.amsa.gov.au/Spatial/DataServices/DigitalData). As can be seen in the link, the information is directly provided by the Australian Government and its free to access it. 
 &emsp;Finally we got the access to the data and, as planned, it was really easy to change the datatype.
-#### Visualization
+
+#### iPyLeaflet & iPyWidgets
+&emsp;I have been mainly in charge of the visualizations during the project until developing the prototype when our needs of changed to offline mapping. On the first days I started looking for a package on the internet to visualize our data. Finally I chose [ipyleaflet](https://ipyleaflet.readthedocs.io/en/latest/).
+
+> ipyleaflet is an interactive widgets library, it is based on ipywidgets. This means that everything in ipyleaflet (e.g. the Map, TileLayers, Markers…) is interactive: you can dynamically update attributes from Python or from the Notebook interface.
+
+&emsp;One of the best points of this package is the interactivity that can be established easily with [iPyWidgets](https://ipywidgets.readthedocs.io/en/latest/) to dinamically change the visualizations inline on our Jupyter notebooks.
+
 
