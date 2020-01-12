@@ -14,6 +14,8 @@ _**Note**: One of the python packages used for visualizations preceding the fina
       * [What is an anomaly?](#what-is-an-anomaly)
    * [About the data](#about-the-data)
       * [Codebook](#codebook)
+      * [Data Exploration](#data-exploration)
+       * [visualization](#visualization)
 ## Introduction to the project
 ### Project's Value
 &emsp;Over the past decades there has been a significant rise in maritime traffic. This means that managing this traffic is an increasingly difficult task due to the amount of data that needs to be processed. Unfortunately, by the time the sea routes are becoming more congested, most of the managing methods and prococols (traditionally hand-operated) are overwhelming operators arising a descent on its efficiency.
@@ -24,7 +26,7 @@ _**Note**: One of the python packages used for visualizations preceding the fina
 
 ### What is an anomaly?
 
-&emsp;In computational terms a maritime vessel anomaly can be defined as a deviation from the normal behavior of a ship under previously studied circunstances. This delimitation of the subject can seem to be not accurate enough but that is why this is an up-to-date topic. Nevertheless and with this subjacent concept present, during the literature study phase of the project we could reach more mathematical clarity arround the concept. According to the product owner, the current definition about anomaly detection in Saab is standarized as:
+&emsp;In daily terms a maritime vessel anomaly can be defined as a deviation from the normal behavior of a ship under previously studied circunstances. This delimitation of the subject can seem to be not accurate enough but that is why this is an up-to-date topic. Nevertheless and with this subjacent concept present, during the literature study phase of the project we could reach more mathematical clarity arround the concept. According to the product owner, the current definition about anomaly detection in Saab is standarized as:
 
 1. Three/four times out of the standard deviation when following a route.
 2. Two times out of the standard deviation particularily in terms of speed.
@@ -34,9 +36,16 @@ _**Note**: One of the python packages used for visualizations preceding the fina
 ### Codebook
 &emsp;It a CSV file with 10 columns. The file is 3.9GBs and contains 4.2 million rows. The origin of the data is AIS data captured by Saab, integrated with their own radar data.
 
-&emsp; A codebook with some basic details about the data can be found [here](https://github.com/antoniomgf1998/Portfolio/blob/master/Codebook.ipynb).
+&emsp;A codebook with some basic details about the data can be found [here](https://github.com/antoniomgf1998/Portfolio/blob/master/Codebook.ipynb).
 
-## Data exploration
+### Collecting the data
 
-&emsp;At the beginning of the project we had some trouble to get in touch with it. As we are dealing with confidential data, a lot of burocracy delays involved the first weeks. 
-&emsp;It was not until week 6 when we received the real data
+&emsp;The data we have been dealing with is AIS data collected by Saab radars nearby Hong Kong's harbour. AIS stands for Automatic Identification System, preprocessing the data is a tough task as traducing the information received by the radars to useful information involves filtering noise and figure out what is going on under some spetial circunstances such as two ships overlaping in front of a radar with different sizes, speeds, etc. That task was given done to us by Saab tracking specialists. Anyway during the project we found some issues with the data. To see some of those deffects on the data see the section [Visualization](#visualization).
+
+### Data exploration
+
+&emsp;At the beginning of the project we had some trouble to get in touch with the data, as we are dealing with confidential data, we were involved in a lot of burocracy delays within the first weeks due to the signing and processing of the NDA's and moving the data to the University servers. 
+&emsp;It was not until week 6 when we received the real data. During that period I had a lot of curiosity about the data so I tried to encourage the team to use a Kaggle dataset to start preparing some visualizations as AIS data is the most common way to identify ships all arround the worls and the scalability of the work that we would do was high. With that on mind, we started doing some visualizations on the australian dataset that can be followed [here](https://www.operations.amsa.gov.au/Spatial/DataServices/DigitalData). As can be seen in the link, the information is directly provided by the Australian Government and its free to access it. 
+&emsp;Finally we got the access to the data and, as planned, it was really easy to change the datatype.
+#### Visualization
+
