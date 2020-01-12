@@ -19,6 +19,8 @@ _**Note**: One of the python packages used for visualizations preceding the fina
         * [Visualizations & data preproccessing](#visualizations-and-data-preproccessing)
    * [About the Models](#about-the-models)
      * [Dynamic Markov Models](#dynamic-markov-models)
+        * [About DMM](#about-dmm)
+        * [DMM results](#dmm-results)
      * [Recurrent Neural Network](#recurrent-neural-network)
      * [Density Map Models]
      * [KNN adaptation to unsupervised learning]
@@ -112,10 +114,53 @@ This function was aimed to visualize in red, green and orange all the ship route
 
 ## Models
 &emsp;During the semester we have tried several models to detect anomalies in our dataset
-### Dynamic Markov Models
+
+### Dynamic Markov Models (DMM)
+
+#### About DMM
+
 &emsp;Inspired by [this](https://www.sciencedirect.com/science/article/pii/S0020025517307302?via%3Dihub) paper I started my learning on markov Models after the preprocessing phase to start having some results and notions about the main issues when trying to implement models to our goals with the Hong Kong data.
 &emsp;Markov Models, framed in probability theory, is a stochastic model to model randomly changing mathematical systems. For example, given a system with some defined states over which elements flow, if we correctly define the probability of moving from one state to another according to a training sample, we will be able to detect transitions that _a priori_ would be rare (rated with low probability) or in other words: **anomalies**.
-&emsp;Further information can be found in [this](https://github.com/antoniomgf1998/Portfolio/blob/master/Dynamic_Markov_Models.pdf) presentation I prepared to show the rest of the grouo how dynamic markov models could be applied to our project.
-&emsp;Summarizing the main idea of the presentation that supports the fact that Dynamic Markov fit with our objective (detecting anomalies) I must say that
+&emsp;The essential information about Markov Models and our project can be found in [this](https://github.com/antoniomgf1998/Portfolio/blob/master/Dynamic_Markov_Models.pdf) presentation I prepared to show the rest of the group how dynamic markov models could be applied to our project.
+&emsp;Summarizing the main idea of the presentation that supports the fact that Dynamic Markov fit with our objective (detecting anomalies) I must say that taking into account that the trickiest part of detecting an anomaly is that features must not be studied in a separated way but united, for example speed and length, the two features with which the implementation of the markov model was done have a big relation between following the idea that high speeds are more dangerous for big ships than for small ones so the same speed for a big ship and for a small one might be an anomaly and a normal behaviour respectively under certain circunstances.
+
+&emsp;Another important idea about the implementation, related to the partitions that must be made in the features to define the borders between states, is the fact that our dataset is more populated with small ships than with large ones. This is important because if we set the partition borders linearily, there are surely going to appear some states with no information, see the image below. The solution given to this problem is using percentiles to set the borders.
+
+> E.g.: Given a feature whose punctual values form the set <a href="https://www.codecogs.com/eqnedit.php?latex=X" target="_blank"><img src="https://latex.codecogs.com/gif.latex?X" title="X" /></a> from which we know that <br> <a href="https://www.codecogs.com/eqnedit.php?latex=\forall&space;x_i&space;\epsilon&space;X,&space;0&space;<&space;x_i&space;\le&space;50" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\forall&space;x_i&space;\epsilon&space;X,&space;0&space;<&space;x_i&space;\le&space;50" title="\forall x_i \epsilon X, 0 < x_i \le 50" /></a> but the 70% of punctual values is lower than 20. If we partitionate this feature to define 5 states linearily...<br>
+> State 1: from 0 to 10<br>
+> State 2: from 10 to 20<br>
+> **State 3: from 20 to 30**<br>
+> **State 4: from 30 to 40**<br>
+> **state 5: from 40 to 50**<br>
+> Then states **3, 4 and 5** would be empty.<br>
+> If, instead we define the borders like:<br>
+> State 1: values from 0 to the 20th percentile<br>
+> State 2: values from the 20th percentile to the 40th percentile<br>
+> State 3: values from the 40th percentile to the 60th percentile<br>
+> State 4: values from the 60th percentile to the 80th percentile<br>
+> state 5: values from the 80th percentile to 50<br>
+> **The problem is fixed: all states have the same amount of data and there are no empty states, see the image**
+
+![Comparison between linear and percentile partitions](https://github.com/antoniomgf1998/Portfolio/blob/master/linear-quantile-partitions_DMM.png)
+
+#### DMM Results
+
+&emsp;The final version of the DMM implementation to speed and length in our data can be found [here](https://github.com/antoniomgf1998/Portfolio/blob/master/DMM_final_version.ipynb)
+
+&emsp;The results were apparently not bad but noisy. Hereunder some of the outputs can be shown:
+
+###### 1. DMM Anomalies map
+
+![Anomalies map DMM](https://github.com/antoniomgf1998/Portfolio/blob/master/anomaliesmapDMM.PNG)
+
+###### 2. Some speed-vs-time anomalies plots
+
+![Anomalies map DMM](https://github.com/antoniomgf1998/Portfolio/blob/master/DMM_anomalyex1.png | width=100)
+
+![Anomalies map DMM](https://github.com/antoniomgf1998/Portfolio/blob/master/DMM_anomalyex2.png | width=100)
+
+![Anomalies map DMM](https://github.com/antoniomgf1998/Portfolio/blob/master/DMM_anomalyex3.png | width=100)
+
+
 
 ### Recurrent Neural Networks
