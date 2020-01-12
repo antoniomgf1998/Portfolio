@@ -147,7 +147,7 @@ This function was aimed to visualize in red, green and orange all the ship route
 
 &emsp;The final version of the DMM implementation to speed and length in our data can be found [here](https://github.com/antoniomgf1998/Portfolio/blob/master/DMM_final_version.ipynb)
 
-&emsp;The results were apparently not bad but noisy. Hereunder some of the outputs can be shown:
+&emsp;Hereunder some of the outputs can be shown:
 
 ###### 1. DMM Anomalies map
 
@@ -155,12 +155,10 @@ This function was aimed to visualize in red, green and orange all the ship route
 
 ###### 2. Some speed-vs-time anomalies plots
 
-![Anomalies map DMM](https://github.com/antoniomgf1998/Portfolio/blob/master/DMM_anomalyex1.png | width=100)
+<img src="https://github.com/antoniomgf1998/Portfolio/blob/master/DMM_anomalyex1.png" width="33%"><img src="https://github.com/antoniomgf1998/Portfolio/blob/master/DMM_anomalyex2.png" width="33%"><img src="https://github.com/antoniomgf1998/Portfolio/blob/master/DMM_anomalyex3.png" width="33%">
 
-![Anomalies map DMM](https://github.com/antoniomgf1998/Portfolio/blob/master/DMM_anomalyex2.png | width=100)
-
-![Anomalies map DMM](https://github.com/antoniomgf1998/Portfolio/blob/master/DMM_anomalyex3.png | width=100)
-
-
+&emsp;The results were apparently not bad even though a little noisy, most of the anomalies detected by it are visually reasonable but the evaluation of most of this anomalies requires both probably more data to cover the theoreticall simplicity of the model and more field knowledge than the one our product owner has and the one we could acquire within this months of work(requires experience in evaluating types of ships, information about the highest speed per individual ship) so it would last a lot of time to get the model evaluated by us with a not assumable uncertainty.
 
 ### Recurrent Neural Networks
+
+&emsp;
