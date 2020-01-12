@@ -13,10 +13,10 @@ _**Note**: One of the python packages used for visualizations preceding the fina
       * [Project's Value](#projects-value)
       * [What is an anomaly?](#what-is-an-anomaly)
    * [About the data](#about-the-data)
-      * [Codebook](#codebook)
-      * [Data Exploration](#data-exploration)
-         * [iPyLeaflet & iPyWidgets](#ipyleaflet-&-ipywidgets)
-         * [visualization](#visualization)
+     * [Codebook](#codebook)
+     * [Data Exploration](#data-exploration)
+        * [iPyLeaflet & iPyWidgets](#ipyleaflet-and-ipywidgets)
+        * [Visualizations](#visualizations)
 ## Introduction to the project
 ### Project's Value
 &emsp;Over the past decades there has been a significant rise in maritime traffic. This means that managing this traffic is an increasingly difficult task due to the amount of data that needs to be processed. Unfortunately, by the time the sea routes are becoming more congested, most of the managing methods and prococols (traditionally hand-operated) are overwhelming operators arising a descent on its efficiency.
@@ -49,7 +49,7 @@ _**Note**: One of the python packages used for visualizations preceding the fina
 &emsp;It was not until week 6 when we received the real data. During that period I had a lot of curiosity about the data so I tried to encourage the team to use a Kaggle dataset to start preparing some visualizations as AIS data is the most common way to identify ships all arround the worls and the scalability of the work that we would do was high. With that on mind, we started doing some visualizations on the australian dataset that can be followed [here](https://www.operations.amsa.gov.au/Spatial/DataServices/DigitalData). As can be seen in the link, the information is directly provided by the Australian Government and its free to access it. 
 &emsp;Finally we got the access to the data and, as planned, it was really easy to change the datatype.
 
-#### iPyLeaflet & iPyWidgets
+#### iPyLeaflet and iPyWidgets
 &emsp;I have been mainly in charge of the visualizations during the project until developing the prototype when our needs of changed to offline mapping. On the first days I started looking for a package on the internet to visualize our data. Finally I chose [ipyleaflet](https://ipyleaflet.readthedocs.io/en/latest/).
 
 > ipyleaflet is an interactive widgets library, it is based on ipywidgets. This means that everything in ipyleaflet (e.g. the Map, TileLayers, Markers…) is interactive: you can dynamically update attributes from Python or from the Notebook interface.
