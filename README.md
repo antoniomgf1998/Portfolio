@@ -63,17 +63,21 @@ _**Note**: Most of the visualizations are too big to get uploaded to this repo a
 
 ##### Example of visualization on Australia Dataset
 
-&emsp; - **[Static visualization on australian dataset with random color and detail popups](https://github.com/antoniomgf1998/Portfolio/blob/master/data_visualization_static.ipynb)**
+&emsp; - **[Static visualization on australian dataset with random color and detail popups (notebook)](https://github.com/antoniomgf1998/Portfolio/blob/master/data_visualization_static.ipynb)**
 
-##### Random colored ships with details as clickable popups
-- [HTML file with the resulting map](https://github.com/antoniomgf1998/Portfolio/blob/master/australia_50_random_color_visualization.html)
+###### Random colored ships with details as clickable popups
+- [HTML file with the resulting map (result)](https://github.com/antoniomgf1998/Portfolio/blob/master/australia_50_random_color_visualization.html)
 
 ##### Dynamic Visualization with slider on Hong Kong data
 
 &emsp; - **[Dynamic visualization on Hong Kong - reduced area dataset with random color and details popups](https://github.com/antoniomgf1998/Portfolio/blob/master/data_visualization_dynamic.ipynb)**
 
-##### Density map
-&emsp;Too big files to upload them as HTML
+###### Density map
+&emsp;Visualization of the overlaping routes to identify the most concurrent routes (The darker --> The 
 ![Density Map](https://github.com/antoniomgf1998/Portfolio/blob/master/density_map_plot_reduced_area.PNG)
 
+###### Testing visualize_by_id function results (prototype v.0.)
+
 ![Preparing the Prototype (initial version)](https://github.com/antoniomgf1998/Portfolio/blob/master/prototype_v1.PNG)
+
+
