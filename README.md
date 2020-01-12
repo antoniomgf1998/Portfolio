@@ -17,6 +17,14 @@ _**Note**: One of the python packages used for visualizations preceding the fina
      * [Data Exploration](#data-exploration)
         * [iPyLeaflet & iPyWidgets](#ipyleaflet-and-ipywidgets)
         * [Visualizations & data preproccessing](#visualizations-and-data-preproccessing)
+   * [About the Models](#about-the-models)
+     * [Dynamic Markov Models](#dynamic-markov-models)
+     * [Recurrent Neural Network](#recurrent-neural-network)
+     * [Density Map Models]
+     * [KNN adaptation to unsupervised learning]
+   
+   
+        
 ## Introduction to the project
 ### Project's Value
 &emsp;Over the past decades there has been a significant rise in maritime traffic. This means that managing this traffic is an increasingly difficult task due to the amount of data that needs to be processed. Unfortunately, by the time the sea routes are becoming more congested, most of the managing methods and prococols (traditionally hand-operated) are overwhelming operators arising a descent on its efficiency.
@@ -56,8 +64,12 @@ _**Note**: One of the python packages used for visualizations preceding the fina
 
 &emsp;One of the best points of this package is the interactivity that can be established easily with [iPyWidgets](https://ipywidgets.readthedocs.io/en/latest/) to dinamically change the visualizations inline on our Jupyter notebooks.
 
-#### Visualizations & data preprocessing
-&emsp;Some examples of the code and the results of this code can be found hereunder:
+&emsp;The problem with this two libraries when we started to develop the prototype was the computational time it lasted to plot ships on time instead of their whole routes but It was not until almost the end of the project when we moved to pure JS and JSON files for offline plotting (which was also a requirement of the product owner). The timings were extremely increasing when we tried to plot steps on the sorted datetime feature. This issue is due to the fact that ipyleaflet works concatenating layers so that all elements ploted on a map is represented on a different layer so if instead of ploting each entire ship route at one separated layer, we try to plot ships on timesteps the amount of layers increases exponentially taking into account that we have information from every ship every 3 seconds.
+
+#### Visualizations and data preprocessing
+
+&emsp;All the visualizations during the project were evolutions of the presented examples hereunder.
+&emsp;Before Stephan came up with the idea of developing our own library, I started creating detailed Jupyter notebooks with my functions so that the rest of the group could consult any doubt, [here](https://github.com/antoniomgf1998/Portfolio/blob/master/Data_visualization_functions.md) is the link to the notebook I started with that goal.
 
 _**Note**: Most of the visualizations are too big to get uploaded to this repo as HTML. In substitution, I have divided this section into the link to hthe notebook and mostly just a screenshot of the results produced by it._
 
@@ -92,3 +104,10 @@ _**Note**: Most of the visualizations are too big to get uploaded to this repo a
 ###### 3.2. Testing visualize_by_id function results (prototype v.0.)
 
 ![Preparing the Prototype (initial version)](https://github.com/antoniomgf1998/Portfolio/blob/master/prototype_v1.PNG)
+
+## Models
+&emsp;During the semester we have tried several models to detect anomalies in our dataset
+### Dynamic Markov Models
+
+
+### Recurrent Neural Networks
