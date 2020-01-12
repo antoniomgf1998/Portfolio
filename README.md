@@ -59,6 +59,21 @@ _**Note**: One of the python packages used for visualizations preceding the fina
 #### Visualizations
 &emsp;Some examples of the code and the results of this code can be found hereunder:
 
-&emsp; - **[Static visualization on australian dataset with random color and details popups](https://github.com/antoniomgf1998/Portfolio/blob/master/data_visualization_static.ipynb)**
+_**Note**: Most of the visualizations are too big to get uploaded to this repo as HTML. In substitution, I have divided this section into the link to hthe notebook and mostly just a screenshot of the results produced by it._
 
-&emsp;&emsp; - [HTML file with the resulting map](https://github.com/antoniomgf1998/Portfolio/blob/master/australia_50_random_color_visualization.html)
+##### Example of visualization on Australia Dataset
+
+&emsp; - **[Static visualization on australian dataset with random color and detail popups](https://github.com/antoniomgf1998/Portfolio/blob/master/data_visualization_static.ipynb)**
+
+##### Random colored ships with details as clickable popups
+- [HTML file with the resulting map](https://github.com/antoniomgf1998/Portfolio/blob/master/australia_50_random_color_visualization.html)
+
+##### Dynamic Visualization with slider on Hong Kong data
+
+&emsp; - **[Dynamic visualization on Hong Kong - reduced area dataset with random color and details popups](https://github.com/antoniomgf1998/Portfolio/blob/master/data_visualization_dynamic.ipynb)**
+
+##### Density map
+&emsp;Too big files to upload them as HTML
+![Density Map](https://github.com/antoniomgf1998/Portfolio/blob/master/density_map_plot_reduced_area.PNG)
+
+![Preparing the Prototype (initial version)](https://github.com/antoniomgf1998/Portfolio/blob/master/prototype_v1.PNG)
