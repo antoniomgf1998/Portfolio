@@ -16,7 +16,7 @@ _**Note**: One of the python packages used for visualizations preceding the fina
      * [Codebook](#codebook)
      * [Data Exploration](#data-exploration)
         * [iPyLeaflet & iPyWidgets](#ipyleaflet-and-ipywidgets)
-        * [Visualizations](#visualizations)
+        * [Visualizations & data preproccessing](#visualizations-and-data-preproccessing)
 ## Introduction to the project
 ### Project's Value
 &emsp;Over the past decades there has been a significant rise in maritime traffic. This means that managing this traffic is an increasingly difficult task due to the amount of data that needs to be processed. Unfortunately, by the time the sea routes are becoming more congested, most of the managing methods and prococols (traditionally hand-operated) are overwhelming operators arising a descent on its efficiency.
@@ -50,13 +50,13 @@ _**Note**: One of the python packages used for visualizations preceding the fina
 &emsp;Finally we got the access to the data and, as planned, it was really easy to change the datatype.
 
 #### iPyLeaflet and iPyWidgets
-&emsp;I have been mainly in charge of the visualizations during the project until developing the prototype when our needs of changed to offline mapping. On the first days I started looking for a package on the internet to visualize our data. Finally I chose [ipyleaflet](https://ipyleaflet.readthedocs.io/en/latest/).
+&emsp;I have been in charge of all the visualizations during the project until developing the prototype when our needs of changed to offline mapping. On the first days I started looking for a package on the internet to visualize our data. Finally I chose [ipyleaflet](https://ipyleaflet.readthedocs.io/en/latest/).
 
 > ipyleaflet is an interactive widgets library, it is based on ipywidgets. This means that everything in ipyleaflet (e.g. the Map, TileLayers, Markers…) is interactive: you can dynamically update attributes from Python or from the Notebook interface.
 
 &emsp;One of the best points of this package is the interactivity that can be established easily with [iPyWidgets](https://ipywidgets.readthedocs.io/en/latest/) to dinamically change the visualizations inline on our Jupyter notebooks.
 
-#### Visualizations
+#### Visualizations & data preprocessing
 &emsp;Some examples of the code and the results of this code can be found hereunder:
 
 _**Note**: Most of the visualizations are too big to get uploaded to this repo as HTML. In substitution, I have divided this section into the link to hthe notebook and mostly just a screenshot of the results produced by it._
@@ -65,18 +65,30 @@ _**Note**: Most of the visualizations are too big to get uploaded to this repo a
 
 &emsp;**[Static visualization on australian dataset with random color and detail popups (notebook)](https://github.com/antoniomgf1998/Portfolio/blob/master/data_visualization_static.ipynb)**
 
-###### [HTML Random colored ships with details as clickable popups (result)](https://github.com/antoniomgf1998/Portfolio/blob/master/australia_50_random_color_visualization.html)
+###### 1.1. [HTML Random colored ships with details as clickable popups (result)](https://github.com/antoniomgf1998/Portfolio/blob/master/australia_50_random_color_visualization.html)
 
-##### 2. **Dynamic Visualization with slider on Hong Kong data**
+##### 2. **Example of visualization on entire Hong Kong Dataset**
 
-&emsp; - **[Dynamic visualization on Hong Kong - reduced area dataset with random color and details popups](https://github.com/antoniomgf1998/Portfolio/blob/master/data_visualization_dynamic.ipynb)**
+&emsp;**[Dynamic visualization on Hong Kong dataset with random color and detail popups (notebook)](https://github.com/antoniomgf1998/Portfolio/blob/master/data_visualization_dynamic-HK_whole_dataset.ipynb)**
 
-###### Density map
+###### 2.1. Visualization of entire dataset Hong Kong
+
+&emsp;In the image shown below the noise on the datased without preprocessing can clearly been seen. This was one of the first issues we faced on the first weeks. The ships with abnormal behaviour shuch as the one coloured in blue (covering a great part of the map) were taken out from the dataset.
+
+&emsp;But It all did not finish with the removal of some ships. We noticed that not only one ship was noise, that was the main issue in preproccessing: looking for noise ships, get their mmsi's (Ship ID) and take them out.
+
+![HTML Random colored ships with details as clickable popups HK dataset (result)](https://github.com/antoniomgf1998/Portfolio/blob/master/random_color_plot_whole_area_HK.PNG)
+
+##### 3. **Dynamic Visualization with slider on Hong Kong reduced area data**
+
+&emsp;By the time our first trials with models were evolving the computational time spent on running some code started growing exponentially. Thus, we agreed to focus on just one part of the given area (I will refer to it as reduced area from now on). This part of the map was chosen with the product owner because of its huge traffic and assumable timings while running our scripts after testing them out within it.
+
+&emsp;**[Dynamic visualization on Hong Kong - reduced area dataset with random color and details popups (notebook)](https://github.com/antoniomgf1998/Portfolio/blob/master/data_visualization_dynamic.ipynb)**
+
+###### 3.1. Density map
 &emsp;Visualization of the overlaping routes to identify the most concurrent routes (The darker --> The 
 ![Density Map](https://github.com/antoniomgf1998/Portfolio/blob/master/density_map_plot_reduced_area.PNG)
 
-###### Testing visualize_by_id function results (prototype v.0.)
+###### 3.2. Testing visualize_by_id function results (prototype v.0.)
 
 ![Preparing the Prototype (initial version)](https://github.com/antoniomgf1998/Portfolio/blob/master/prototype_v1.PNG)
-
-
