@@ -57,3 +57,8 @@ _**Note**: One of the python packages used for visualizations preceding the fina
 &emsp;One of the best points of this package is the interactivity that can be established easily with [iPyWidgets](https://ipywidgets.readthedocs.io/en/latest/) to dinamically change the visualizations inline on our Jupyter notebooks.
 
 #### Visualizations
+&emsp;Some examples of the code and the results of this code can be found hereunder:
+
+&emsp; - **[Static visualization on australian dataset with random color and details popups](https://github.com/antoniomgf1998/Portfolio/blob/master/data_visualization_static.ipynb)**
+
+&emsp;&emsp; - [HTML file with the resulting map](https://github.com/antoniomgf1998/Portfolio/blob/master/australia_50_random_color_visualization.html)
