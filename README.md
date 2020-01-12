@@ -15,7 +15,8 @@ _**Note**: One of the python packages used for visualizations preceding the fina
    * [About the data](#about-the-data)
       * [Codebook](#codebook)
       * [Data Exploration](#data-exploration)
-       * [visualization](#visualization)
+         * [iPyLeaflet & iPyWidgets](#ipyleaflet-&-ipywidgets)
+         * [visualization](#visualization)
 ## Introduction to the project
 ### Project's Value
 &emsp;Over the past decades there has been a significant rise in maritime traffic. This means that managing this traffic is an increasingly difficult task due to the amount of data that needs to be processed. Unfortunately, by the time the sea routes are becoming more congested, most of the managing methods and prococols (traditionally hand-operated) are overwhelming operators arising a descent on its efficiency.
@@ -55,4 +56,4 @@ _**Note**: One of the python packages used for visualizations preceding the fina
 
 &emsp;One of the best points of this package is the interactivity that can be established easily with [iPyWidgets](https://ipywidgets.readthedocs.io/en/latest/) to dinamically change the visualizations inline on our Jupyter notebooks.
 
-
+#### Visualizations
