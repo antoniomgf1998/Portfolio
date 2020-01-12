@@ -61,14 +61,13 @@ _**Note**: One of the python packages used for visualizations preceding the fina
 
 _**Note**: Most of the visualizations are too big to get uploaded to this repo as HTML. In substitution, I have divided this section into the link to hthe notebook and mostly just a screenshot of the results produced by it._
 
-##### Example of visualization on Australia Dataset
+##### 1. **Example of visualization on Australia Dataset**
 
-&emsp; - **[Static visualization on australian dataset with random color and detail popups (notebook)](https://github.com/antoniomgf1998/Portfolio/blob/master/data_visualization_static.ipynb)**
+&emsp;**[Static visualization on australian dataset with random color and detail popups (notebook)](https://github.com/antoniomgf1998/Portfolio/blob/master/data_visualization_static.ipynb)**
 
-###### Random colored ships with details as clickable popups
-- [HTML file with the resulting map (result)](https://github.com/antoniomgf1998/Portfolio/blob/master/australia_50_random_color_visualization.html)
+###### [HTML Random colored ships with details as clickable popups (result)](https://github.com/antoniomgf1998/Portfolio/blob/master/australia_50_random_color_visualization.html)
 
-##### Dynamic Visualization with slider on Hong Kong data
+##### 2. **Dynamic Visualization with slider on Hong Kong data**
 
 &emsp; - **[Dynamic visualization on Hong Kong - reduced area dataset with random color and details popups](https://github.com/antoniomgf1998/Portfolio/blob/master/data_visualization_dynamic.ipynb)**
 
