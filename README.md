@@ -63,7 +63,7 @@ _**Note**: One of the python packages used for visualizations preceding the fina
 &emsp;At the beginning of the project we had some trouble to get in touch with the data, as we are dealing with confidential data, we were involved in a lot of burocracy delays within the first weeks due to the signing and processing of the NDA's and moving the data to the University servers. 
 &emsp;It was not until week 6 when we received the real data. During that period I had a lot of curiosity about the data so I tried to encourage the team to use a Kaggle dataset to start preparing some visualizations as AIS data is the most common way to identify ships all arround the worls and the scalability of the work that we would do was high. With that on mind, we started doing some visualizations on the australian dataset that can be followed [here](https://www.operations.amsa.gov.au/Spatial/DataServices/DigitalData). As can be seen in the link, the information is directly provided by the Australian Government and its free to access it. 
 &emsp;Finally we got the access to the data and, as planned, it was really easy to change the datatype.
-&emsp;To start hands-on the data I made several simple plots such as the ones present in [this notebook](https://github.com/antoniomgf1998/Portfolio/blob/master/Statistics of the data.ipynb)
+&emsp;To start hands-on the data I made several simple plots such as the ones present in [this notebook](https://github.com/antoniomgf1998/Portfolio/blob/master/ "Statistics of the data.ipynb")
 
 #### iPyLeaflet and iPyWidgets
 &emsp;I have been in charge of all the visualizations during the project until developing the prototype when our needs of changed to offline mapping. On the first days I started looking for a package on the internet to visualize our data. Finally I chose [ipyleaflet](https://ipyleaflet.readthedocs.io/en/latest/).
@@ -208,17 +208,13 @@ This function was aimed to visualize in red, green and orange all the ship route
 
 &emsp;During the time we were stucked with the RNN, our product owner asked us for a certain task: obtain weighted graph (grid) representing the amount of ships that commonly cross nearby the nodes of it. I reached the result by developing the following notebook in which I provide various visualizations.
 
-<img src="https://github.com/antoniomgf1998/Portfolio/blob/master/DENSITYMAP/grid_measurement.PNG" width="50%">
-<img src="https://github.com/antoniomgf1998/Portfolio/blob/master/DENSITYMAP/grid_overview.PNG" width="50%">
-
-
 &emsp;One of the ideas that I am at most proud of when it comes to this developed model by me is rounding coordinates to get the closest node. The equilibrium between computation time and preccission was rounding to the 3th decimal (100m see above's images of the grid).
+
+<img src="https://github.com/antoniomgf1998/Portfolio/blob/master/DENSITYMAP/grid_measurement.PNG" width="50%"><img src="https://github.com/antoniomgf1998/Portfolio/blob/master/DENSITYMAP/grid_overview.PNG" width="50%">
 
 &emsp;When I started to develop the model, once the grid was defined, given a point I calculated the euclidean distance to each one of the nodes in the grid. The result was too much running time (**too much obviously**). To fix this problem, the algorithm I started to follow was get round-coordinates identified nodes so that given a point I just would have to round it and found the coincidence. That's the node assigned to it. 
 
 &emsp;With the parts of the development clear, the algorithm is simple, assign a size or a color according to the repetitions found in our data, the results are the following:
-
-<img src="https://github.com/antoniomgf1998/Portfolio/blob/master/DENSITYMAP/grid_measurement.PNG" width="50%"><img src="https://github.com/antoniomgf1998/Portfolio/blob/master/DENSITYMAP/grid_overview.PNG" width="50%">
 
 ###### Output as a circle map
 
@@ -228,10 +224,15 @@ This function was aimed to visualize in red, green and orange all the ship route
 
 > Zoomed-in(left), Overview(right)
 
+> The Hotter color, the more populated zone
+
 <img src="https://github.com/antoniomgf1998/Portfolio/blob/master/DENSITYMAP/heatmap_in_detail.PNG" width="50%"><img src="https://github.com/antoniomgf1998/Portfolio/blob/master/DENSITYMAP/heatmap_overview.PNG" width="50%">
 
+&emsp;And finally, this is why above results are in [Models section](#models) and not in visualizations. After getting this visual results, I started wondering what would happen If I scale this density map to a anomaly detection map to alert when a ship is in a non-frequently populated area (less than 5 repetitions in historical data). This are the results:
 
+<img src="https://github.com/antoniomgf1998/Portfolio/blob/master/DENSITYMAP/model_derived_overview.PNG">
 
+&emsp;The results are good comparing them to the heatmap and the size map (anomalies are thrown in the expected areas) but the results are not powerful enough, even though, it is a valid model to detect ships in weird positions according to historical data.
 
 ### Neural Networks
 
