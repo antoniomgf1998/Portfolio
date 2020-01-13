@@ -239,7 +239,39 @@ This function was aimed to visualize in red, green and orange all the ship route
 
 &emsp;Inspired by the idea of the previous simple model, I started thinking about ways to apply the grid method for anomaly detection for more useful results. Comming with the idea of storaging the most common directions for each node to detect wether a ship is facing an anomalous direction according to historical data. So, I got this map:
 
-<img src="https://github.com/antoniomgf1998/Portfolio/blob/master/Unsupervised_KNN/directions_orientation_colors.PNG" width="5%><img src="https://github.com/antoniomgf1998/Portfolio/blob/master/Unsupervised_KNN/directional_map_overview.PNG">
+> <img src="https://github.com/antoniomgf1998/Portfolio/blob/master/Unsupervised_KNN/directions_orientation_colors.PNG" width="5%">  This is the relation between colors and directions.   
+
+<img src="https://github.com/antoniomgf1998/Portfolio/blob/master/Unsupervised_KNN/directional_map_overview.PNG">
+
+&emsp;This result was unexpectedly good and opened a lot of doors for our project from my point of view. The next steps should be look for a way to measure uniformly (a general method for all nodes) to get the density of a given direction at a certain point when consulting the historic data.
+
+&emsp;Looking at the previous visualization there is always a predominant direction for each node so I tried to aproximate the distribution with a gaussian bell. But this was not accurate enough due to the fact that some nodes do not have just one predominant direction but two, three or even a range of them:
+
+<img src="https://github.com/antoniomgf1998/Portfolio/blob/master/Unsupervised_KNN/normal_distribution_aproximation.png" width="50%"><img src="https://github.com/antoniomgf1998/Portfolio/blob/master/Unsupervised_KNN/example_of_two_directions.png" width="50%">
+
+###### Kernel Density Estimation
+
+&emsp;Kernel dDensity Estimation or KDE is a method to approximate multimodal distributions of data by using different kinds of kernels (gaussian is one of them). In other words, is exactly what I was looking for.
+
+&emsp;After discovering It I starded doing my research on this method and understanding It. Bassically explained It generates a combination of various normal distributions separated one from each other by a bandwith (a hyperparameter). Once I got the visually desired bandwidth, I got the following result:
+
+<img src="https://github.com/antoniomgf1998/Portfolio/blob/master/Unsupervised_KNN/KDE_distribution_aproximation.png" width="33%"><img src="https://github.com/antoniomgf1998/Portfolio/blob/master/Unsupervised_KNN/Visualization_of_kde_aproximation.png" width="33%"><img src="https://github.com/antoniomgf1998/Portfolio/blob/master/Unsupervised_KNN/example_of_two_directions.png" width="33%">
+
+&emsp;In three dimensions, KDE fits perfectly to the historical directions for the same node (midle picture).
+
+
+&emsp;As can be seen in the image before shown, the results are much better according to the same data if comparing, It only lasts to create a anomaly detection map to test this idea out. This version of the anomaly detection map includes new color codes and functionalities associated.
+
+* ![#0000ff](https://placehold.it/15/0000ff/000000?text=+) As BLUE: Anchored ships → They should be treated differently → working on that
+* ![#FFA500](https://placehold.it/15/FFA500/000000?text=+) As ORANGE: Trajectories for which we do not have enough info in its closest node to conclude anything → Can be fixed with more data
+* ![#ff0000](https://placehold.it/15/ff0000/000000?text=+) As RED: Anomaly according to the historical data in the closest node.
+* ![#00ff00](https://placehold.it/15/00ff00/000000?text=+) As GREEN: Normal behaviors.
+
+&emsp;Once implemented the model, I realised that there were found some little anomalies on direction that would not make sense to alert operators for (noise). The solution for that was implementing a buffer. To get printed as RED, ORANGE or BLUE we take into account 5 steps. If within those 5 steps more than the 60% of the transitions have been labeled under the same color, the transition we are evaluating will get that color.
+
+###### Results
+
+![](https://github.com/antoniomgf1998/Portfolio/blob/master/Unsupervised_KNN/results_KNN.png")
 
 
 
