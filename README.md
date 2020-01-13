@@ -10,11 +10,16 @@ _**Note**: One of the python packages used for visualizations preceding the fina
 ## Table of contents
    * [Table of contents](#table-of-contents)
    * [Introduction](#Introduction-to-the-project)
-      * [Project's Value](#projects-value)
+      * [DataCamp Courses](#datacamp-courses)
+      * [Communication](#communication)
+      * [Developing Methodology](#developing-methodology)
+      * [Task Definition and Project's value](#task-definition-and-projects-value)
+         * [Research Questions](#research-questions)
       * [What is an anomaly?](#what-is-an-anomaly)
    * [Data](#about-the-data)
      * [Codebook](#codebook)
-     * [Data Exploration](#data-exploration)
+     * [Collecting the data](#collecting-the-data)
+     * [Data exploration](#data-exploration)
         * [iPyLeaflet & iPyWidgets](#ipyleaflet-and-ipywidgets)
         * [Visualizations & data preproccessing](#visualizations-and-data-preproccessing)
    * [Models](#models)
@@ -26,22 +31,55 @@ _**Note**: One of the python packages used for visualizations preceding the fina
         * [RNN Results](#rnn-results)
      * [Density Map Models](#density-map-models)
      * [KNN adaptation to unsupervised learning](#knn-adaption-to-unsupervised-learning)
-     
      * [Simple Neural Networks and fake anomalies](#simple-neural-networks)
-   
+   * [Reflection]
    
         
 ## Introduction to the project
-### Project's Value
+
+## DataCamp Courses
+&emsp;I completed succesfully all the assignments on the datacamp courses. Even though I already had python experience, It was constructive and served me to learn useful information about code optimization with Pandas and numpy and about graphing in matplotlib.
+![](https://github.com/antoniomgf1998/Portfolio/blob/master/DATACAMP/DATACAMP1.PNG)![](https://github.com/antoniomgf1998/Portfolio/blob/master/DATACAMP/DATACAMP2.PNG)
+
+### Communication
+&emsp;In terms of communication, I have contributed to all of the presentations preparation and presented 4 times along the course. One of our objectives as a group was presenting everyone in cycle for a better overview of all team members.
+
+> "If you can't explain it simply, you don't understand it well enough.", A. Einstein
+
+[Folder with all the presentations](https://github.com/antoniomgf1998/Portfolio/blob/master/WEEKLY_PRESENTATIONS)
+
+&emsp;Presentations was not only a medium of communication at a school level, as can be seen in the folder, we have also been preparing presentations to show at Saab's offices for the sprint retrospective and planning.
+
+&emsp;As we all have a look more frequently at our personal gmail account that the school, which we have redirected to gmail, we have been working on documentation using Google Drive and Google Docs.
+
+&emsp;For task communications, we used trello which fits at best to our methodology requirement of a digital/analogical board.
+
+### Developing Methodology
+&emsp;The developing methodology we have used during the minor is SCRUM. SCRUM is specially efficient for groups with few people such as our (6 people) and is one of the methodologies most commonly used in the work world nowadays. Our daily standups have taken place at school at 10:00 am. and our sprint duration on average has been two weeks, this has to do with the fact that we met at Apeldorn (Saab Technologies offices) to plan the upcoming sprints and evaluate our performance on the previous one with Jordi, our produc owner. This sprint reviews have been irregular because some issues have made us change the sprint review and planning to a skype meeting in the meidle of the planned one.
+&emsp;As said in the previous point, we have been using Trello Board for SCRUM assignments communications.
+
+### Task Definition and Projects Value
 &emsp;Over the past decades there has been a significant rise in maritime traffic. This means that managing this traffic is an increasingly difficult task due to the amount of data that needs to be processed. Unfortunately, by the time the sea routes are becoming more congested, most of the managing methods and prococols (traditionally hand-operated) are overwhelming operators arising a descent on its efficiency.
 
 &emsp;Data science has a lot to do to improve the maritime services and vigilance and Anomaly Detection is a really valuable field to put research efforts, primarily because of a fact: Unguarded maritime traffic can lead to ilegal trade, fish poaching, collissions that can supose high costs and a long list preventable troubles on harbours.</p>
 
 &emsp;There is a lot of literature on the topic but as it is a highly transversal issue, the methods to detect anomalies are not standarized and depend much about the field to which we want to apply it.
 
+#### Research Questions
+
+###### Main question
+&emsp;**Is it possible to create an algorithm that can read the behaviour of ships in real-time and label certain ships as an anomaly?**
+
+###### Subquestions
+
+&emsp;1. What is maritime traffic?
+&emsp;2. What is an anomaly?
+&emsp;3. What methods can be used for detecting anomalies?
+
+
 ### What is an anomaly?
 
-&emsp;In daily terms a maritime vessel anomaly can be defined as a deviation from the normal behavior of a ship under previously studied circunstances. This delimitation of the subject can seem to be not accurate enough but that is why this is an up-to-date topic. Nevertheless and with this subjacent concept present, during the literature study phase of the project we could reach more mathematical clarity arround the concept. According to the product owner, the current definition about anomaly detection in Saab is standarized as:
+&emsp;This is the main question when it comes to jargon in this project. In daily terms a maritime vessel anomaly can be defined as a deviation from the normal behavior of a ship under previously studied circunstances. This delimitation of the subject can seem to be not accurate enough but that is why this is an up-to-date topic. Nevertheless and with this subjacent concept present, during the literature study phase of the project we could reach more mathematical clarity arround the concept. According to the product owner, the current definition about anomaly detection in Saab is standarized as:
 
 1. Three/four times out of the standard deviation when following a route.
 2. Two times out of the standard deviation particularily in terms of speed.
@@ -203,9 +241,16 @@ This function was aimed to visualize in red, green and orange all the ship route
 
 ### Neural Networks
 
-## About NN approach
+###### About NN approach
 
-&emsp;Due to the problems with the LSTM-RNN approach, we tried to start predicting
+&emsp;In this approach I have been involved partially at the beginning but not as in the rest of the models.
+
+&emsp;Due to the problems with the LSTM-RNN approach, we tried to start predicting routes with a simpler model (without LSTM's). For this purpose I developed a function in [this notebook](https://github.com/antoniomgf1998/Portfolio/blob/master/NN/V8_translation_to_function.ipynb) to train multiple model architectures for evaluation tasks but I was not in charge of evaluating them. Even though that, not much better results were obtained. This made us change once again the approach with neural networks to classifying.
+
+&emsp;But... how to classify if we do not have labeled data. The idea of this approach lays on generating realistic fake anomalies in a sufficient amount to enable a NN predict if a certain ship route is anomalous or not. The goal is not just classifying the artificial ones so the evaluation of this NN must be different from normal approaches to prediction with NN (that has been the main concept I have translated to the group members in charge of this approach, Akash and Dauwe).
+
+&emsp;The other contribution to this approach has been a function to generate anomalies by rotating ship routes whose evidence I can not present as it was developed under a member's ID at the GPU server to which I do not have access.
+
 
 ### Density Map Models
 
