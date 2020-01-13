@@ -155,7 +155,11 @@ This function was aimed to visualize in red, green and orange all the ship route
 
 ###### 2. Some speed-vs-time anomalies plots
 
+&emsp;As I was dealing with not-labeled data, I had to make out how to evaluate the model. In this case, I started ploting for each whole route analized speed-on-time plots to see if anomalies detected visually match with weird movements such as huge differences between two points. Hereunder some images of this plots.
+
 <img src="https://github.com/antoniomgf1998/Portfolio/blob/master/DMM_anomalyex1.png" width="33%"><img src="https://github.com/antoniomgf1998/Portfolio/blob/master/DMM_anomalyex2.png" width="33%"><img src="https://github.com/antoniomgf1998/Portfolio/blob/master/DMM_anomalyex3.png" width="33%">
+
+
 
 &emsp;The results were apparently not bad even though a little noisy, most of the anomalies detected by it are visually reasonable but the evaluation of most of this anomalies requires both probably more data to cover the theoreticall simplicity of the model and more field knowledge than the one our product owner has and the one we could acquire within this months of work(requires experience in evaluating types of ships, information about the highest speed per individual ship) so it would last a lot of time to get the model evaluated by us with a not assumable uncertainty.
 
@@ -163,4 +167,4 @@ This function was aimed to visualize in red, green and orange all the ship route
 
 &emsp;A recurrent neural network (RNN) is a class of artificial neural networks where connections between nodes form a directed graph along a temporal sequence. From this point of view, RNN's fit perfectly to our kind of data since all 
 
-&emsp;From the very beginning, our product owner encouraged us to learn about RNN's
+&emsp;From the very beginning, our product owner encouraged us to learn about RNN's because
