@@ -161,4 +161,6 @@ This function was aimed to visualize in red, green and orange all the ship route
 
 ### Recurrent Neural Networks
 
-&emsp;
+&emsp;A recurrent neural network (RNN) is a class of artificial neural networks where connections between nodes form a directed graph along a temporal sequence. From this point of view, RNN's fit perfectly to our kind of data since all 
+
+&emsp;From the very beginning, our product owner encouraged us to learn about RNN's
