@@ -201,6 +201,12 @@ This function was aimed to visualize in red, green and orange all the ship route
 
 &emsp;The bad results and the uncertainty about where they were coming from led us to ask Jeroen for advise. With him, we reached the conclusion of trying out simpler models changing the inputs, see [Neural Networks](#neural-networks) section.
 
+### Neural Networks
+
+## About NN approach
+
+&emsp;Due to the problems with the LSTM-RNN approach, we tried to start predicting
+
 ### Density Map Models
 
 &emsp;The final version of the model derived from the density map and images explained below can be found [here](https://github.com/antoniomgf1998/Portfolio/blob/master/DENSITYMAP/Density_grid_points-rounding.ipynb)
@@ -236,6 +242,10 @@ This function was aimed to visualize in red, green and orange all the ship route
 &emsp;The results are good comparing them to the heatmap and the size map (anomalies are thrown in the expected areas) but the results are not powerful enough, even though, it is a valid model to detect ships in weird positions according to historical data.
 
 ### KNN adaptation to unsupervised learning
+&emsp;The notebooks related to this model are the following:
+&emsp;[Main notebook with direction model finished]("https://github.com/antoniomgf1998/Portfolio/blob/master/Unsupervised_KNN/directional_KNN_rounding-V5.ipynb")
+
+&emsp;[Function to export the functionalities to other features in furthermore research]("https://github.com/antoniomgf1998/Portfolio/blob/master/Unsupervised_KNN/generic_KNN_rounding_function.ipynb")
 
 &emsp;Inspired by the idea of the previous simple model, I started thinking about ways to apply the grid method for anomaly detection for more useful results. Comming with the idea of storaging the most common directions for each node to detect wether a ship is facing an anomalous direction according to historical data. So, I got this map:
 
@@ -271,13 +281,9 @@ This function was aimed to visualize in red, green and orange all the ship route
 
 ###### Results
 
-![](https://github.com/antoniomgf1998/Portfolio/blob/master/Unsupervised_KNN/results_KNN.png")
+&emsp;This prototype is perfectly functional and was aproved by our product owner and it is directly related to our research question as this algorithm verifies it is possible to develop an algorithm able to read the behaviour of the ships in real time and label certain ships as an anomaly, answers what an anomaly is under the context of direction.
+&emsp;Also, It is evident that this can be scaled to other features such as speed, rate of turn, etc. in futhermore research.
+
+![](https://github.com/antoniomgf1998/Portfolio/blob/master/Unsupervised_KNN/results_KNN.PNG)
 
 
-
-
-### Neural Networks
-
-## About NN approach
-
-&emsp;Due to the problems with the LSTM-RNN approach, we tried to start predicting
