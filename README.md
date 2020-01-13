@@ -12,20 +12,23 @@ _**Note**: One of the python packages used for visualizations preceding the fina
    * [Introduction](#Introduction-to-the-project)
       * [Project's Value](#projects-value)
       * [What is an anomaly?](#what-is-an-anomaly)
-   * [About the data](#about-the-data)
+   * [Data](#about-the-data)
      * [Codebook](#codebook)
      * [Data Exploration](#data-exploration)
         * [iPyLeaflet & iPyWidgets](#ipyleaflet-and-ipywidgets)
         * [Visualizations & data preproccessing](#visualizations-and-data-preproccessing)
-   * [About the Models](#about-the-models)
+   * [Models](#models)
      * [Dynamic Markov Models](#dynamic-markov-models)
         * [About DMM](#about-dmm)
         * [DMM results](#dmm-results)
      * [Recurrent Neural Network](#recurrent-neural-network)
         * [About RNN](#about-rnn)
         * [RNN Results](#rnn-results)
-     * [Density Map Models]
-     * [KNN adaptation to unsupervised learning]
+     * [Density Map Models](#density-map-models)
+        * [Traffic density](#traffic-density)
+        * [Directional Map](#directional-map)
+     * [KNN adaptation to unsupervised learning](#knn-adaption-to-unsupervised-learning)
+     * [Simple Neural Networks and fake anomalies](#simple-neural-networks)
    
    
         
@@ -117,7 +120,7 @@ This function was aimed to visualize in red, green and orange all the ship route
 ## Models
 &emsp;During the semester we have tried several models to detect anomalies in our dataset
 
-### Dynamic Markov Models (DMM)
+### Dynamic Markov Models
 
 #### About DMM
 
@@ -198,3 +201,40 @@ This function was aimed to visualize in red, green and orange all the ship route
 <img src="https://github.com/antoniomgf1998/Portfolio/blob/master/LSTM/LSTM_visualization_2.PNG">
 
 &emsp;The bad results and the uncertainty about where they were coming from led us to ask Jeroen for advise. With him, we reached the conclusion of trying out simpler models changing the inputs, see [Neural Networks](#neural-networks) section.
+
+### Density Map Models
+
+&emsp;The final version of the model derived from the density map and images explained below can be found [here](https://github.com/antoniomgf1998/Portfolio/blob/master/DENSITYMAP/Density_grid_points-rounding.ipynb)
+
+&emsp;During the time we were stucked with the RNN, our product owner asked us for a certain task: obtain weighted graph (grid) representing the amount of ships that commonly cross nearby the nodes of it. I reached the result by developing the following notebook in which I provide various visualizations.
+
+<img src="https://github.com/antoniomgf1998/Portfolio/blob/master/DENSITYMAP/grid_measurement.PNG" width="50%">
+<img src="https://github.com/antoniomgf1998/Portfolio/blob/master/DENSITYMAP/grid_overview.PNG" width="50%">
+
+
+&emsp;One of the ideas that I am at most proud of when it comes to this developed model by me is rounding coordinates to get the closest node. The equilibrium between computation time and preccission was rounding to the 3th decimal (100m see above's images of the grid).
+
+&emsp;When I started to develop the model, once the grid was defined, given a point I calculated the euclidean distance to each one of the nodes in the grid. The result was too much running time (**too much obviously**). To fix this problem, the algorithm I started to follow was get round-coordinates identified nodes so that given a point I just would have to round it and found the coincidence. That's the node assigned to it. 
+
+&emsp;With the parts of the development clear, the algorithm is simple, assign a size or a color according to the repetitions found in our data, the results are the following:
+
+<img src="https://github.com/antoniomgf1998/Portfolio/blob/master/DENSITYMAP/grid_measurement.PNG" width="50%"><img src="https://github.com/antoniomgf1998/Portfolio/blob/master/DENSITYMAP/grid_overview.PNG" width="50%">
+
+###### Output as a circle map
+
+<img src="https://github.com/antoniomgf1998/Portfolio/blob/master/DENSITYMAP/size_map_overview.PNG">
+
+###### Output as a heatmap
+
+> Zoomed-in(left), Overview(right)
+
+<img src="https://github.com/antoniomgf1998/Portfolio/blob/master/DENSITYMAP/heatmap_in_detail.PNG" width="50%"><img src="https://github.com/antoniomgf1998/Portfolio/blob/master/DENSITYMAP/heatmap_overview.PNG" width="50%">
+
+
+
+
+### Neural Networks
+
+## About NN approach
+
+&emsp;Due to the problems with the LSTM-RNN approach, we tried to start predicting
