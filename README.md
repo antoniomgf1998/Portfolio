@@ -237,7 +237,12 @@ This function was aimed to visualize in red, green and orange all the ship route
 
 ### KNN adaptation to unsupervised learning
 
-Inspired by the idea of the previous simple model, I started thinking about ways to apply the grid method for anomaly detection
+&emsp;Inspired by the idea of the previous simple model, I started thinking about ways to apply the grid method for anomaly detection for more useful results. Comming with the idea of storaging the most common directions for each node to detect wether a ship is facing an anomalous direction according to historical data. So, I got this map:
+
+<img src="https://github.com/antoniomgf1998/Portfolio/blob/master/Unsupervised_KNN/directions_orientation_colors.PNG" width="5%><img src="https://github.com/antoniomgf1998/Portfolio/blob/master/Unsupervised_KNN/directional_map_overview.PNG">
+
+
+
 
 ### Neural Networks
 
