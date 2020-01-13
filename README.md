@@ -22,6 +22,8 @@ _**Note**: One of the python packages used for visualizations preceding the fina
         * [About DMM](#about-dmm)
         * [DMM results](#dmm-results)
      * [Recurrent Neural Network](#recurrent-neural-network)
+        * [About RNN](#about-rnn)
+        * [RNN Results](#rnn-results)
      * [Density Map Models]
      * [KNN adaptation to unsupervised learning]
    
@@ -163,7 +165,9 @@ This function was aimed to visualize in red, green and orange all the ship route
 
 &emsp;The results were apparently not bad even though a little noisy, most of the anomalies detected by it are visually reasonable but the evaluation of most of this anomalies requires both probably more data to cover the theoreticall simplicity of the model and more field knowledge than the one our product owner has and the one we could acquire within this months of work(requires experience in evaluating types of ships, information about the highest speed per individual ship) so it would last a lot of time to get the model evaluated by us with a not assumable uncertainty.
 
-### Recurrent Neural Networks
+### Recurrent Neural Network
+
+#### About RNN
 
 &emsp;A recurrent neural network (RNN) is a class of artificial neural network where connections between nodes form a directed graph along a temporal sequence. From this point of view, RNN's fit perfectly to our kind of data since all ships routes can be interpreted as a temporal sequence. The point where this model fits to our purpose is that context matters on what the behaviour of the ship should be. From the very beginning, our product owner encouraged us to learn about RNN's because of all this facts so the subject of RNN's was really present in the phase of the literature study.
 
