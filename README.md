@@ -165,6 +165,28 @@ This function was aimed to visualize in red, green and orange all the ship route
 
 ### Recurrent Neural Networks
 
-&emsp;A recurrent neural network (RNN) is a class of artificial neural networks where connections between nodes form a directed graph along a temporal sequence. From this point of view, RNN's fit perfectly to our kind of data since all 
+&emsp;A recurrent neural network (RNN) is a class of artificial neural network where connections between nodes form a directed graph along a temporal sequence. From this point of view, RNN's fit perfectly to our kind of data since all ships routes can be interpreted as a temporal sequence. The point where this model fits to our purpose is that context matters on what the behaviour of the ship should be. From the very beginning, our product owner encouraged us to learn about RNN's because of all this facts so the subject of RNN's was really present in the phase of the literature study.
 
-&emsp;From the very beginning, our product owner encouraged us to learn about RNN's because
+&emsp; The approach with RNN, as the data we have is not labelled and we need ground truth to train our model (RNN is a supervised type of model), was trying to predict the next step after having trained with sequences of movements. This was my suggestion at the beginning of the implementation, otherwise with not labelled data It would not make sense to apply this type of algorithm and our product owner really wanted us to explore RNN's as a solution.
+
+&emsp;Going a bit more in detail about the implementation of this RNN, we tried both with LSTM denses and with GRU denses, which are the main units used when it comes to RNN's:
+
+* 1. LSTM stands for Long-Short term memory and the remarcable point of this units is the capability of take into account the context (time) of a given part of the input contrary to classical feedforward models trained with backpropagation.
+
+* 2. GRU stands for Gated Recurrent Unit, which are units like LSTM with forget gate to enforce the capability of forgeting what it determines not useful information.
+
+#### RNN Results
+
+&emsp;By the time we started our RNN implementation I was busy and still in charge of the DMM approach so I missed the first implementations which were focused in trying to predict just one ship route learning from small segments of it, getting some "acceptable results" (mse <= 0.001). This value of loss is not conclusive taking into account that an error of 0.00001 in (lat,lon) coordinates means 100m of real errors in our predictions, and this was only the first phase (we were pretending to move from positional prediction to other features predictions). Even though the data is scaled and mse cannot be directly compared to real error, I made some calculations that clarified there was something unexpectedly wrong going on.
+> <a href="https://www.codecogs.com/eqnedit.php?latex=Let\:(X,Y)\epsilon(\mathbb{R}^{2n}\times\mathbb{R}^{2})\:be\:the\:dataset\:and\:\gamma\epsilon\mathbb{R}^2&space;\:be\:our\:positional\:predictions\:\\where\:n=timesteps-1.\\\\&space;Defining\:as\:assumable\:that\:given\:(Y_i,\gamma_i),&space;|Y_i-\gamma_i|\le10^{-5}\:\:(10\:meters),\\&space;Which\:traduced\:to\:scaled\:data(X^s,Y^s,\gamma^s),\:as\:it\:reduces\:the\:order\:of\\\:magnitude\:10^2\:is:\\\\&space;|Y^s_i-\gamma^s_i|\le10^{-7}(=10^{-5}10^{-2})\\\\&space;Using\:MSE\:as\:cost\:function...\\&space;|Y^s_i-\gamma^s_i|\le10^{-7}\Rightarrow&space;(Y^s_i-\gamma^s_i)^2\le10^{-14}\Rightarrow&space;\sum_{i=1}^{N}(Y^s_i-\gamma^s_i)^2\le&space;N10^{-14}\Rightarrow&space;\\&space;\frac{1}{N}\sum_{i=1}^{N}(Y^s_i-\gamma^s_i)^2\le&space;10^{-14}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Let\:(X,Y)\epsilon(\mathbb{R}^{2n}\times\mathbb{R}^{2})\:be\:the\:dataset\:and\:\gamma\epsilon\mathbb{R}^2&space;\:be\:our\:positional\:predictions\:\\where\:n=timesteps-1.\\\\&space;Defining\:as\:assumable\:that\:given\:(Y_i,\gamma_i),&space;|Y_i-\gamma_i|\le10^{-5}\:\:(10\:meters),\\&space;Which\:traduced\:to\:scaled\:data(X^s,Y^s,\gamma^s),\:as\:it\:reduces\:the\:order\:of\\\:magnitude\:10^2\:is:\\\\&space;|Y^s_i-\gamma^s_i|\le10^{-7}(=10^{-5}10^{-2})\\\\&space;Using\:MSE\:as\:cost\:function...\\&space;|Y^s_i-\gamma^s_i|\le10^{-7}\Rightarrow&space;(Y^s_i-\gamma^s_i)^2\le10^{-14}\Rightarrow&space;\sum_{i=1}^{N}(Y^s_i-\gamma^s_i)^2\le&space;N10^{-14}\Rightarrow&space;\\&space;\frac{1}{N}\sum_{i=1}^{N}(Y^s_i-\gamma^s_i)^2\le&space;10^{-14}" title="Let\:(X,Y)\epsilon(\mathbb{R}^{2n}\times\mathbb{R}^{2})\:be\:the\:dataset\:and\:\gamma\epsilon\mathbb{R}^2 \:be\:our\:positional\:predictions\:\\where\:n=timesteps-1.\\\\ Defining\:as\:assumable\:that\:given\:(Y_i,\gamma_i), |Y_i-\gamma_i|\le10^{-5}\:\:(10\:meters),\\ Which\:traduced\:to\:scaled\:data(X^s,Y^s,\gamma^s),\:as\:it\:reduces\:the\:order\:of\\\:magnitude\:10^2\:is:\\\\ |Y^s_i-\gamma^s_i|\le10^{-7}(=10^{-5}10^{-2})\\\\ Using\:MSE\:as\:cost\:function...\\ |Y^s_i-\gamma^s_i|\le10^{-7}\Rightarrow (Y^s_i-\gamma^s_i)^2\le10^{-14}\Rightarrow \sum_{i=1}^{N}(Y^s_i-\gamma^s_i)^2\le N10^{-14}\Rightarrow \\ \frac{1}{N}\sum_{i=1}^{N}(Y^s_i-\gamma^s_i)^2\le 10^{-14}" /></a>
+
+&emsp;Result from which we were too far (reaching from 10e-3 to 10e-5 on our MSE values) not knowing why.
+
+&emsp;In the images below can be found the results from a model with a model consisting of a 150 LSTM layer, and an output layer trying to predict the next 20th position of a 19-size-sequence of points over different areas of the map.
+
+    _**Note**: **Thick** line --> Real course._
+
+    _Thin line --> Predictions starting from the penultimate position of the route._
+
+<img src="https://github.com/antoniomgf1998/Portfolio/blob/master/LSTM/LSTM_visualization_1.PNG">
+<img src="https://github.com/antoniomgf1998/Portfolio/blob/master/LSTM/LSTM_visualization_2.PNG">
