@@ -25,9 +25,8 @@ _**Note**: One of the python packages used for visualizations preceding the fina
         * [About RNN](#about-rnn)
         * [RNN Results](#rnn-results)
      * [Density Map Models](#density-map-models)
-        * [Traffic density](#traffic-density)
-        * [Directional Map](#directional-map)
      * [KNN adaptation to unsupervised learning](#knn-adaption-to-unsupervised-learning)
+     
      * [Simple Neural Networks and fake anomalies](#simple-neural-networks)
    
    
@@ -228,11 +227,17 @@ This function was aimed to visualize in red, green and orange all the ship route
 
 <img src="https://github.com/antoniomgf1998/Portfolio/blob/master/DENSITYMAP/heatmap_in_detail.PNG" width="50%"><img src="https://github.com/antoniomgf1998/Portfolio/blob/master/DENSITYMAP/heatmap_overview.PNG" width="50%">
 
+###### Output as a anomaly detection model
+
 &emsp;And finally, this is why above results are in [Models section](#models) and not in visualizations. After getting this visual results, I started wondering what would happen If I scale this density map to a anomaly detection map to alert when a ship is in a non-frequently populated area (less than 5 repetitions in historical data). This are the results:
 
 <img src="https://github.com/antoniomgf1998/Portfolio/blob/master/DENSITYMAP/model_derived_overview.PNG">
 
 &emsp;The results are good comparing them to the heatmap and the size map (anomalies are thrown in the expected areas) but the results are not powerful enough, even though, it is a valid model to detect ships in weird positions according to historical data.
+
+### KNN adaptation to unsupervised learning
+
+Inspired by the idea of the previous simple model, I started thinking about ways to apply the grid method for anomaly detection
 
 ### Neural Networks
 
