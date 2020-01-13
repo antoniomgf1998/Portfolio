@@ -9,19 +9,21 @@ _**Note**: One of the python packages used for visualizations preceding the fina
 
 ## Table of contents
    * [Table of contents](#table-of-contents)
-   * [Introduction](#Introduction-to-the-project)
+   * [Introduction to the Project](#introduction-to-the-project)
       * [DataCamp Courses](#datacamp-courses)
       * [Communication](#communication)
       * [Developing Methodology](#developing-methodology)
       * [Task Definition and Project's value](#task-definition-and-projects-value)
          * [Research Questions](#research-questions)
+            * [Main Question](#main-question)
+            * [Subquestions](#subquestions)
       * [What is an anomaly?](#what-is-an-anomaly)
-   * [Data](#about-the-data)
+   * [About Data](#about-the-data)
      * [Codebook](#codebook)
      * [Collecting the data](#collecting-the-data)
      * [Data exploration](#data-exploration)
         * [iPyLeaflet & iPyWidgets](#ipyleaflet-and-ipywidgets)
-        * [Visualizations & data preproccessing](#visualizations-and-data-preproccessing)
+        * [Visualizations & data preprocessing](#visualizations-and-data-preprocessing)
    * [Models](#models)
      * [Dynamic Markov Models](#dynamic-markov-models)
         * [About DMM](#about-dmm)
@@ -29,15 +31,22 @@ _**Note**: One of the python packages used for visualizations preceding the fina
      * [Recurrent Neural Network](#recurrent-neural-network)
         * [About RNN](#about-rnn)
         * [RNN Results](#rnn-results)
+     * [Simple Neural Networks and fake Anomalies](#simple-neural-networks-and-fake-anomalies)
+        * [About NN approach](#about-nn-approach)
+        * [NN results]
      * [Density Map Models](#density-map-models)
-     * [KNN adaptation to unsupervised learning](#knn-adaption-to-unsupervised-learning)
-     * [Simple Neural Networks and fake anomalies](#simple-neural-networks)
+        * [About Density Maps](#about-density-maps)
+        * [Density Maps Results](#density-maps-results)
+     * [KNN adaptation to unsupervised learning](#knn-adaptation-to-unsupervised-learning)
+        * [About unsupervised KNN](#about-unsupervised-knn)
+        * [Unsupervised KNN results](#unsupervised-knn-results)     
    * [Reflection]
+   * [Conclussion]
    
         
 ## Introduction to the project
 
-## DataCamp Courses
+### DataCamp Courses
 &emsp;I completed succesfully all the assignments on the datacamp courses. Even though I already had python experience, It was constructive and served me to learn useful information about code optimization with Pandas and numpy and about graphing in matplotlib.
 ![](https://github.com/antoniomgf1998/Portfolio/blob/master/DATACAMP/DATACAMP1.PNG)![](https://github.com/antoniomgf1998/Portfolio/blob/master/DATACAMP/DATACAMP2.PNG)
 
@@ -239,7 +248,7 @@ This function was aimed to visualize in red, green and orange all the ship route
 
 &emsp;The bad results and the uncertainty about where they were coming from led us to ask Jeroen for advise. With him, we reached the conclusion of trying out simpler models changing the inputs, see [Neural Networks](#neural-networks) section.
 
-### Neural Networks
+### Simple Neural Networks and fake Anomalies
 
 ###### About NN approach
 
@@ -253,6 +262,7 @@ This function was aimed to visualize in red, green and orange all the ship route
 
 
 ### Density Map Models
+#### About Density Maps
 
 &emsp;The final version of the model derived from the density map and images explained below can be found [here](https://github.com/antoniomgf1998/Portfolio/blob/master/DENSITYMAP/Density_grid_points-rounding.ipynb)
 
@@ -265,6 +275,7 @@ This function was aimed to visualize in red, green and orange all the ship route
 &emsp;When I started to develop the model, once the grid was defined, given a point I calculated the euclidean distance to each one of the nodes in the grid. The result was too much running time (**too much obviously**). To fix this problem, the algorithm I started to follow was get round-coordinates identified nodes so that given a point I just would have to round it and found the coincidence. That's the node assigned to it. 
 
 &emsp;With the parts of the development clear, the algorithm is simple, assign a size or a color according to the repetitions found in our data, the results are the following:
+#### Density Maps Results
 
 ###### Output as a circle map
 
@@ -287,6 +298,7 @@ This function was aimed to visualize in red, green and orange all the ship route
 &emsp;The results are good comparing them to the heatmap and the size map (anomalies are thrown in the expected areas) but the results are not powerful enough, even though, it is a valid model to detect ships in weird positions according to historical data.
 
 ### KNN adaptation to unsupervised learning
+#### About unsupervised KNN
 &emsp;The notebooks related to this model are the following:
 &emsp;[Main notebook with direction model finished]("https://github.com/antoniomgf1998/Portfolio/blob/master/Unsupervised_KNN/directional_KNN_rounding-V5.ipynb")
 
@@ -324,7 +336,7 @@ This function was aimed to visualize in red, green and orange all the ship route
 
 &emsp;Once implemented the model, I realised that there were found some little anomalies on direction that would not make sense to alert operators for (noise). The solution for that was implementing a buffer. To get printed as RED, ORANGE or BLUE we take into account 5 steps. If within those 5 steps more than the 60% of the transitions have been labeled under the same color, the transition we are evaluating will get that color.
 
-###### Results
+#### Unsupervised KNN Results
 
 &emsp;This prototype is perfectly functional and was aproved by our product owner and it is directly related to our research question as this algorithm verifies it is possible to develop an algorithm able to read the behaviour of the ships in real time and label certain ships as an anomaly, answers what an anomaly is under the context of direction.
 &emsp;Also, It is evident that this can be scaled to other features such as speed, rate of turn, etc. in futhermore research.
