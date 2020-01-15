@@ -310,9 +310,10 @@ This function was aimed to visualize in red, green and orange all the ship route
 ### KNN adaptation to unsupervised learning
 #### About unsupervised KNN
 &emsp;The notebooks related to this model are the following:
-&emsp;[Main notebook with direction model finished]("https://github.com/antoniomgf1998/Portfolio/blob/master/Unsupervised_KNN/directional_KNN_rounding-V5.ipynb")
 
-&emsp;[Function to export the functionalities to other features in furthermore research]("https://github.com/antoniomgf1998/Portfolio/blob/master/Unsupervised_KNN/generic_KNN_rounding_function.ipynb")
+[Main notebook with direction model finished]("https://github.com/antoniomgf1998/Portfolio/blob/master/Unsupervised_KNN/directional_KNN_rounding-V5.ipynb")
+
+[Function to export the functionalities to other features in furthermore research]("https://github.com/antoniomgf1998/Portfolio/blob/master/Unsupervised_KNN/generic_KNN_rounding_function.ipynb")
 
 &emsp;Inspired by the idea of the previous simple model, I started thinking about ways to apply the grid method for anomaly detection for more useful results. Comming with the idea of storaging the most common directions for each node to detect wether a ship is facing an anomalous direction according to historical data. So, I got this map:
 
