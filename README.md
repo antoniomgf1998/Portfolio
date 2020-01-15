@@ -130,19 +130,19 @@ _**Note: One of the python packages used for visualizations preceding the final 
 #### Visualizations and data preprocessing
 
 &emsp;All the visualizations during the project were evolutions of the hereunder presented examples done by me.
-&emsp;Before Stephan came up with the idea of developing our own library, I started creating detailed Jupyter notebooks with my functions so that the rest of the group could consult any doubt, [here](https://github.com/antoniomgf1998/Portfolio/blob/master/VISUALIZATION/Data_visualization_functions.md) is the link to the notebook I started with that goal.
+&emsp;Before Stephan came up with the idea of developing our own library, I started creating detailed Jupyter notebooks with my functions so that the rest of the group could consult any doubt, [here](https://github.com/antoniomgf1998/Portfolio/blob/master/VISUALIZATIONS/Data_visualization_functions.md) is the link to the notebook I started with that goal.
 
 _**Note**: Most of the visualizations are too big to get uploaded to this repo as HTML. In substitution, I have divided this section into the link to hthe notebook and mostly just a screenshot of the results produced by it._
 
 ##### 1. **Example of visualization on Australia Dataset**
 
-&emsp;**[Static visualization on australian dataset with random color and detail popups (notebook)](https://github.com/antoniomgf1998/Portfolio/blob/master/VISUALIZATION/data_visualization_static.ipynb)**
+&emsp;**[Static visualization on australian dataset with random color and detail popups (notebook)](https://github.com/antoniomgf1998/Portfolio/blob/master/VISUALIZATIONS/data_visualization_static.ipynb)**
 
-###### 1.1. [HTML Random colored ships with details as clickable popups (result)](https://github.com/antoniomgf1998/Portfolio/blob/master/VISUALIZATION/australia_50_random_color_visualization.html)
+###### 1.1. [HTML Random colored ships with details as clickable popups (result)](https://github.com/antoniomgf1998/Portfolio/blob/master/VISUALIZATIONS/australia_50_random_color_visualization.html)
 
 ##### 2. **Example of visualization on entire Hong Kong Dataset**
 
-&emsp;**[Dynamic visualization on Hong Kong dataset with random color and detail popups (notebook)](https://github.com/antoniomgf1998/Portfolio/blob/master/VISUALIZATION/data_visualization_dynamic-HK_whole_dataset.ipynb)**
+&emsp;**[Dynamic visualization on Hong Kong dataset with random color and detail popups (notebook)](https://github.com/antoniomgf1998/Portfolio/blob/master/VISUALIZATIONS/data_visualization_dynamic-HK_whole_dataset.ipynb)**
 
 ###### 2.1. Visualization of entire dataset Hong Kong
 
@@ -150,7 +150,7 @@ _**Note**: Most of the visualizations are too big to get uploaded to this repo a
 
 &emsp;But It all did not finish with the removal of some ships. We noticed that not only one ship was noise, that was the main issue in preproccessing: looking for noise ships, get their mmsi's (Ship ID) and take them out.
 
-![HTML Random colored ships with details as clickable popups HK dataset (result)](https://github.com/antoniomgf1998/Portfolio/blob/master/VISUALIZATION/random_color_plot_whole_area_HK.PNG)
+![HTML Random colored ships with details as clickable popups HK dataset (result)](https://github.com/antoniomgf1998/Portfolio/blob/master/VISUALIZATIONS/random_color_plot_whole_area_HK.PNG)
 
 ##### 3. **Dynamic Visualization with slider on Hong Kong reduced area data**
 
