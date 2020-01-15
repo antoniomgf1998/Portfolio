@@ -105,7 +105,7 @@ _**Note: One of the python packages used for visualizations preceding the final 
 ### Codebook
 &emsp;It a CSV file with 10 columns. The file is 3.9GBs and contains 4.2 million rows. The origin of the data is AIS data captured by Saab, integrated with their own radar data.
 
-&emsp;A codebook with some basic details about the data can be found [here](https://github.com/antoniomgf1998/Portfolio/blob/master/Codebook.ipynb).
+&emsp;A codebook with some basic details about the data can be found [here](https://github.com/antoniomgf1998/Portfolio/blob/master/Codebook.md).
 
 ### Collecting the data
 
@@ -116,7 +116,7 @@ _**Note: One of the python packages used for visualizations preceding the final 
 &emsp;At the beginning of the project we had some trouble to get in touch with the data, as we are dealing with confidential data, we were involved in a lot of burocracy delays within the first weeks due to the signing and processing of the NDA's and moving the data to the University servers. 
 &emsp;It was not until week 6 when we received the real data. During that period I had a lot of curiosity about the data so I tried to encourage the team to use a Kaggle dataset to start preparing some visualizations as AIS data is the most common way to identify ships all arround the worls and the scalability of the work that we would do was high. With that on mind, we started doing some visualizations on the australian dataset that can be followed [here](https://www.operations.amsa.gov.au/Spatial/DataServices/DigitalData). As can be seen in the link, the information is directly provided by the Australian Government and its free to access it. 
 &emsp;Finally we got the access to the data and, as planned, it was really easy to change the datatype.
-&emsp;To start hands-on the data I made several simple plots such as the ones present in [this notebook](https://github.com/antoniomgf1998/Portfolio/blob/master/ "Statistics of the data.ipynb")
+&emsp;To start hands-on the data I made several simple plots such as the ones present in [this notebook](https://github.com/antoniomgf1998/Portfolio/blob/master/Statistics_of_the_data.ipynb)
 
 #### iPyLeaflet and iPyWidgets
 &emsp;I have been in charge of all the visualizations during the project until developing the prototype when our needs of changed to offline mapping. On the first days I started looking for a package on the internet to visualize our data. Finally I chose [ipyleaflet](https://ipyleaflet.readthedocs.io/en/latest/).
@@ -156,19 +156,19 @@ _**Note**: Most of the visualizations are too big to get uploaded to this repo a
 
 &emsp;By the time our first trials with models were evolving the computational time spent on running some code started growing exponentially. Thus, we agreed to focus on just one part of the given area (I will refer to it as reduced area from now on). This part of the map was chosen with the product owner because of its huge traffic and assumable timings while running our scripts after testing them out within it.
 
-&emsp;**[Dynamic visualization on Hong Kong - reduced area dataset with random color and details popups (notebook)](https://github.com/antoniomgf1998/Portfolio/blob/master/VISUALIZATION/data_visualization_dynamic.ipynb)**
+&emsp;**[Dynamic visualization on Hong Kong - reduced area dataset with random color and details popups (notebook)](https://github.com/antoniomgf1998/Portfolio/blob/master/VISUALIZATIONS/data_visualization_dynamic.ipynb)**
 
 ###### 3.1. Visualizing Traffic Density
 
 &emsp;Visualization of the overlaping routes to identify the most concurrent routes (The darker --> The more populated path). All routes were plotted with a transparency of 0.5.
 
-![Density Map](https://github.com/antoniomgf1998/Portfolio/blob/master/VISUALIZATION/density_map_plot_reduced_area.PNG)
+![Density Map](https://github.com/antoniomgf1998/Portfolio/blob/master/VISUALIZATIONS/density_map_plot_reduced_area.PNG)
 
 ###### 3.2. Testing visualize_by_id function results (prototype v.0.)
 
 This function was aimed to visualize in red, green and orange all the ship routes. So, whenever we got a model to work we could just specify what ships were anomalous (red), suspicious to be anomalous (orange) and within normality (green). The image below does not have any model supporting its conclusions, it is just a test.
 
-![Preparing the Prototype (initial version)](https://github.com/antoniomgf1998/Portfolio/blob/master/VISUALIZATION/prototype_v1.PNG)
+![Preparing the Prototype (initial version)](https://github.com/antoniomgf1998/Portfolio/blob/master/VISUALIZATIONS/prototype_v1.PNG)
 
 ## Models
 &emsp;During the semester we have tried several models to detect anomalies in our dataset
