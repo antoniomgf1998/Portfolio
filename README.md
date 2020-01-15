@@ -246,7 +246,7 @@ This function was aimed to visualize in red, green and orange all the ship route
 
 &emsp;In the images below can be found the results from a model with a model consisting of a 150 LSTM layer, and an output layer trying to predict the next 20th position of a 19-size-sequence of points over different areas of the map.
 
-    _**Note**: **Thick** line --> Real course._
+    _Note: Thick line --> Real course._
 
     _Thin line --> Predictions starting from the penultimate position of the route._
 
