@@ -309,6 +309,7 @@ This function was aimed to visualize in red, green and orange all the ship route
 
 ### KNN adaptation to unsupervised learning
 #### About unsupervised KNN
+
 &emsp;The notebooks related to this model are the following:
 
 * [Main notebook with direction model finished]("https://github.com/antoniomgf1998/Portfolio/blob/master/Unsupervised_KNN/directional_KNN_rounding-V5.ipynb")
