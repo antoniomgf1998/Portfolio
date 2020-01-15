@@ -314,8 +314,10 @@ This function was aimed to visualize in red, green and orange all the ship route
 &emsp;The notebooks related to this model are the following:
 > I'm having trouble with this links, the name of the files are respectively
 > * /Unsupervised_KNN/directional_KNN_rounding-V5.ipynb
-> * /Unsupervised_KNN/generic_KNN_rounding_function.ipynb
+
 [Main notebook with direction model finished]("https://github.com/antoniomgf1998/Portfolio/blob/master/Unsupervised_KNN/directional_KNN_rounding-V5.ipynb")
+
+> * /Unsupervised_KNN/generic_KNN_rounding_function.ipynb
 
 [Function to export the functionalities to other features in furthermore research]("https://github.com/antoniomgf1998/Portfolio/blob/master/Unsupervised_KNN/generic_KNN_rounding_function.ipynb")
 
