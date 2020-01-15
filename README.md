@@ -130,19 +130,19 @@ _**Note: One of the python packages used for visualizations preceding the final 
 #### Visualizations and data preprocessing
 
 &emsp;All the visualizations during the project were evolutions of the hereunder presented examples done by me.
-&emsp;Before Stephan came up with the idea of developing our own library, I started creating detailed Jupyter notebooks with my functions so that the rest of the group could consult any doubt, [here](https://github.com/antoniomgf1998/Portfolio/blob/master/Data_visualization_functions.md) is the link to the notebook I started with that goal.
+&emsp;Before Stephan came up with the idea of developing our own library, I started creating detailed Jupyter notebooks with my functions so that the rest of the group could consult any doubt, [here](https://github.com/antoniomgf1998/Portfolio/blob/master/VISUALIZATION/Data_visualization_functions.md) is the link to the notebook I started with that goal.
 
 _**Note**: Most of the visualizations are too big to get uploaded to this repo as HTML. In substitution, I have divided this section into the link to hthe notebook and mostly just a screenshot of the results produced by it._
 
 ##### 1. **Example of visualization on Australia Dataset**
 
-&emsp;**[Static visualization on australian dataset with random color and detail popups (notebook)](https://github.com/antoniomgf1998/Portfolio/blob/master/data_visualization_static.ipynb)**
+&emsp;**[Static visualization on australian dataset with random color and detail popups (notebook)](https://github.com/antoniomgf1998/Portfolio/blob/master/VISUALIZATION/data_visualization_static.ipynb)**
 
-###### 1.1. [HTML Random colored ships with details as clickable popups (result)](https://github.com/antoniomgf1998/Portfolio/blob/master/australia_50_random_color_visualization.html)
+###### 1.1. [HTML Random colored ships with details as clickable popups (result)](https://github.com/antoniomgf1998/Portfolio/blob/master/VISUALIZATION/australia_50_random_color_visualization.html)
 
 ##### 2. **Example of visualization on entire Hong Kong Dataset**
 
-&emsp;**[Dynamic visualization on Hong Kong dataset with random color and detail popups (notebook)](https://github.com/antoniomgf1998/Portfolio/blob/master/data_visualization_dynamic-HK_whole_dataset.ipynb)**
+&emsp;**[Dynamic visualization on Hong Kong dataset with random color and detail popups (notebook)](https://github.com/antoniomgf1998/Portfolio/blob/master/VISUALIZATION/data_visualization_dynamic-HK_whole_dataset.ipynb)**
 
 ###### 2.1. Visualization of entire dataset Hong Kong
 
@@ -150,25 +150,25 @@ _**Note**: Most of the visualizations are too big to get uploaded to this repo a
 
 &emsp;But It all did not finish with the removal of some ships. We noticed that not only one ship was noise, that was the main issue in preproccessing: looking for noise ships, get their mmsi's (Ship ID) and take them out.
 
-![HTML Random colored ships with details as clickable popups HK dataset (result)](https://github.com/antoniomgf1998/Portfolio/blob/master/random_color_plot_whole_area_HK.PNG)
+![HTML Random colored ships with details as clickable popups HK dataset (result)](https://github.com/antoniomgf1998/Portfolio/blob/master/VISUALIZATION/random_color_plot_whole_area_HK.PNG)
 
 ##### 3. **Dynamic Visualization with slider on Hong Kong reduced area data**
 
 &emsp;By the time our first trials with models were evolving the computational time spent on running some code started growing exponentially. Thus, we agreed to focus on just one part of the given area (I will refer to it as reduced area from now on). This part of the map was chosen with the product owner because of its huge traffic and assumable timings while running our scripts after testing them out within it.
 
-&emsp;**[Dynamic visualization on Hong Kong - reduced area dataset with random color and details popups (notebook)](https://github.com/antoniomgf1998/Portfolio/blob/master/data_visualization_dynamic.ipynb)**
+&emsp;**[Dynamic visualization on Hong Kong - reduced area dataset with random color and details popups (notebook)](https://github.com/antoniomgf1998/Portfolio/blob/master/VISUALIZATION/data_visualization_dynamic.ipynb)**
 
 ###### 3.1. Visualizing Traffic Density
 
 &emsp;Visualization of the overlaping routes to identify the most concurrent routes (The darker --> The more populated path). All routes were plotted with a transparency of 0.5.
 
-![Density Map](https://github.com/antoniomgf1998/Portfolio/blob/master/density_map_plot_reduced_area.PNG)
+![Density Map](https://github.com/antoniomgf1998/Portfolio/blob/master/VISUALIZATION/density_map_plot_reduced_area.PNG)
 
 ###### 3.2. Testing visualize_by_id function results (prototype v.0.)
 
 This function was aimed to visualize in red, green and orange all the ship routes. So, whenever we got a model to work we could just specify what ships were anomalous (red), suspicious to be anomalous (orange) and within normality (green). The image below does not have any model supporting its conclusions, it is just a test.
 
-![Preparing the Prototype (initial version)](https://github.com/antoniomgf1998/Portfolio/blob/master/prototype_v1.PNG)
+![Preparing the Prototype (initial version)](https://github.com/antoniomgf1998/Portfolio/blob/master/VISUALIZATION/prototype_v1.PNG)
 
 ## Models
 &emsp;During the semester we have tried several models to detect anomalies in our dataset
@@ -179,7 +179,7 @@ This function was aimed to visualize in red, green and orange all the ship route
 
 &emsp;Inspired by [this](https://www.sciencedirect.com/science/article/pii/S0020025517307302?via%3Dihub) paper I started my learning on markov Models after the preprocessing phase to start having some results and notions about the main issues when trying to implement models to our goals with the Hong Kong data.
 &emsp;Markov Models, framed in probability theory, is a stochastic model to model randomly changing mathematical systems. For example, given a system with some defined states over which elements flow, if we correctly define the probability of moving from one state to another according to a training sample, we will be able to detect transitions that _a priori_ would be rare (rated with low probability) or in other words: **anomalies**.
-&emsp;The essential information about Markov Models and our project can be found in [this](https://github.com/antoniomgf1998/Portfolio/blob/master/Dynamic_Markov_Models.pdf) presentation I prepared to show the rest of the group how dynamic markov models could be applied to our project.
+&emsp;The essential information about Markov Models and our project can be found in [this](https://github.com/antoniomgf1998/Portfolio/blob/master/DMM/Dynamic_Markov_Models.pdf) presentation I prepared to show the rest of the group how dynamic markov models could be applied to our project.
 &emsp;Summarizing the main idea of the presentation that supports the fact that Dynamic Markov fit with our objective (detecting anomalies) I must say that taking into account that the trickiest part of detecting an anomaly is that features must not be studied in a separated way but united, for example speed and length, the two features with which the implementation of the markov model was done have a big relation between following the idea that high speeds are more dangerous for big ships than for small ones so the same speed for a big ship and for a small one might be an anomaly and a normal behaviour respectively under certain circunstances.
 
 &emsp;Another important idea about the implementation, related to the partitions that must be made in the features to define the borders between states, is the fact that our dataset is more populated with small ships than with large ones. This is important because if we set the partition borders linearily, there are surely going to appear some states with no information, see the image below. The solution given to this problem is using percentiles to set the borders.
@@ -199,23 +199,23 @@ This function was aimed to visualize in red, green and orange all the ship route
 > state 5: values from the 80th percentile to 50<br>
 > **The problem is fixed: all states have the same amount of data and there are no empty states, see the image**
 
-![Comparison between linear and percentile partitions](https://github.com/antoniomgf1998/Portfolio/blob/master/linear-quantile-partitions_DMM.png)
+![Comparison between linear and percentile partitions](https://github.com/antoniomgf1998/Portfolio/blob/master/DMM/linear-quantile-partitions_DMM.png)
 
 #### DMM Results
 
-&emsp;The final version of the DMM implementation to speed and length in our data can be found [here](https://github.com/antoniomgf1998/Portfolio/blob/master/DMM_final_version.ipynb)
+&emsp;The final version of the DMM implementation to speed and length in our data can be found [here](https://github.com/antoniomgf1998/Portfolio/blob/master/DMM/DMM_final_version.ipynb)
 
 &emsp;Hereunder some of the outputs can be shown:
 
 ###### 1. DMM Anomalies map
 
-![Anomalies map DMM](https://github.com/antoniomgf1998/Portfolio/blob/master/anomaliesmapDMM.PNG)
+![Anomalies map DMM](https://github.com/antoniomgf1998/Portfolio/blob/master/DMM/anomaliesmapDMM.PNG)
 
 ###### 2. Some speed-vs-time anomalies plots
 
 &emsp;As I was dealing with not-labeled data, I had to make out how to evaluate the model. In this case, I started ploting for each whole route analized speed-on-time plots to see if anomalies detected visually match with weird movements such as huge differences between two points. Hereunder some images of this plots.
 
-<img src="https://github.com/antoniomgf1998/Portfolio/blob/master/DMM_anomalyex1.png" width="33%"><img src="https://github.com/antoniomgf1998/Portfolio/blob/master/DMM_anomalyex2.png" width="33%"><img src="https://github.com/antoniomgf1998/Portfolio/blob/master/DMM_anomalyex3.png" width="33%">
+<img src="https://github.com/antoniomgf1998/Portfolio/blob/master/DMM/DMM_anomalyex1.png" width="33%"><img src="https://github.com/antoniomgf1998/Portfolio/blob/master/DMM/DMM_anomalyex2.png" width="33%"><img src="https://github.com/antoniomgf1998/Portfolio/blob/master/DMM/DMM_anomalyex3.png" width="33%">
 
 
 
