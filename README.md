@@ -81,6 +81,14 @@ _**Note: One of the python packages used for visualizations preceding the final 
 
 &emsp;There is a lot of literature on the topic but as it is a highly transversal issue, the methods to detect anomalies are not standarized and depend much about the field to which we want to apply it.
 
+&emsp;One of my contributions to the task definition was to talk with Jordi on several times and ask him questions during the presenttions he gave us during the first days. Also, to get a better overview of the real problems we would face during the project a lot of literature was read by me during the first days. I only keep some of the links to the papers that I read and explored in order to get a better overview of the subject, they can be found beneath.
+
+ - [Generalities on anomaly detection](#https://www.kdnuggets.com/2019/10/anomaly-detection-explained.html)
+ - [Real-Time Maritime Traffic Anomaly Detection Based on Sensors and History Data Embedding](#https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6749247/)
+ - [Time series prediction](#http://www.macs.hw.ac.uk/~dwcorne/RSR/00279188.pdf)
+ - [Anomaly detection based on temporal difference](#https://www.sciencedirect.com/science/article/abs/pii/S1568494609001756)
+ 
+&emsp;Also, from a dynamic point of view of the task definition, and taking into account that for this project It has changed a lot, I have been specially involved in this process. From the very beginning and in view of the results I was acquiring with statistical models (explained in detail below) and the results that we were acquiring as a team (I was also involved on it, also detailed below) with the RNN, having on mind that we were going to deal with non-labelled data, I suggested to move to statistical approaches, which were more self-explainable: the algorithms would be more under our control and we would gain a better insight of them to process results and make them evolve to good results. This was an important contribution from my point of view and finally led us to use two approaches where the one in which we obtained better results by far was the one I predicted to work better at the beginning (the statistical one).
 #### Research Questions
 
 ###### Main question
@@ -105,7 +113,7 @@ _**Note: One of the python packages used for visualizations preceding the final 
 ### Codebook
 &emsp;It a CSV file with 10 columns. The file is 3.9GBs and contains 4.2 million rows. The origin of the data is AIS data captured by Saab, integrated with their own radar data.
 
-&emsp;A codebook with some basic details about the data can be found [here](https://github.com/antoniomgf1998/Portfolio/blob/master/Codebook.md).
+&emsp;A codebook with some basic details about the data that was done by me and Stephan [here](https://github.com/antoniomgf1998/Portfolio/blob/master/Codebook.md).
 
 ### Collecting the data
 
@@ -366,23 +374,43 @@ This function was aimed to visualize in red, green and orange all the ship route
 &emsp;Not much to say about the develop of the prototype because I have not been involved in that task but once It was functional, I contributed with Stephan to export the results of the unsupervised KNN approach and adapt the data structures to it since it was one of the selected models to compare in the research paper.
 
 ## Paper
-&emsp;My contribution to the paper has been formally defining the KNN approach and write everything related to it. In our paper we compare NN approach and the named statistical approach which is the unsupervised version of KNN explained above.
+&emsp;In our paper we compare NN approach and the named statistical approach which is the unsupervised version of KNN explained above. It has gone through several versions. The conceptual framework, the introduction and the literature review was the first part of it done. In those, I participated most actively explaining the literature that I was in charge of ( See the [paper](#https://github.com/antoniomgf1998/Portfolio/blob/master/final_paper_saab.pdf) bibliography: Pallotta, Vespe, & Bryan, 2013; Harati-Mokhtari et al., 2007; Ren, Ye & Li, 2017 and Perera, Oliveira & Soares, 2012). In the other two first parts I participated advising conceptually and reviewing them.
+&emsp;I have also entirely written the statistical model methodology, where I tried to be as formal as I could using LaTex and the statistical approach results.
+
+&emsp;I have discussed with the team how we should face the comparison (as the statistical model has significantly better results than the NN approach) and helped also writting it.
+
+&emsp;Also all the figures for the section S (standing for Statistical approach) were made by me.
 
 ### Reflection
 
 #### Reflection on own contribution to the project
 
-&emsp;As can be seen in this portfolio, I have been present in almost all of the main task in the project and I have tried to mantain an overview of how was everything going at every moment. In fact, this has not been tough beacuse It was a project that has motivated me and It has been a great experience to gain knowledge in a field that fits pretty much with my background studies and also with my technical interests. Along all the paragraphs above all my contributions are explained in more detail. 
+&emsp;As can be seen in this portfolio, I have been present in almost all of the main tasks of the project and I have tried to maintain an overview of how was everything going at every moment. In fact, this has not been tough because It was a project that has motivated me and It has been a great experience to gain knowledge in a field that fits pretty much with my background studies and also with my technical interests. Along all the paragraphs above all my contributions are explained in more detail. 
+&emsp;In terms of models, the entirety of the dynamic markov model implementation, the entirety of unsupervised KNN version (statistical approach), the plots of the density maps and other features visualizations as well as most of the tasks during our trial with the RNN, and some contributions with the fake anomalies generation have been under my control or done entirely by me so I think that my contribution has been really relevant towards the results. Taking apart the prototype, I have been involved in all other big models or tasks during the project.
 
-&emsp;I have worked a lot on developing new models that could fit to our reaserch question and the needs of the product owner and as I was not a noob in the field and my mathematical background made me understand better the literature on the subject has led my to carry most of the technical work as It can be proved in the contents of this portfolio.
+&emsp;Talking about learning as a team, I think I have been a key piece for the project as I was the only participant that was not a noob in ML implementations, so I think that has been a huge contribution by my side, share the knowledge I had already to fix problems while developing that I had already faced previously.
+&emsp; Reflecting towards the research questions, I have worked a lot on developing new models that could fit to our research question and the needs of the product owner, suggesting changes to it and being part of its evolution as can be seen and detailedly explained in the previous models. Even though I was not the scrum master, my voice was well taken into account at the time of making decisions related to the research and as I was not a noob in the field and my mathematical background made me understand better the literature on the subject has led my to carry most of the technical work as It can also be proved in the contents of this portfolio.
+&emsp;From the point of view of the team work, during the project retrospective, I got almost a unified opinion from my team mates which was the fact that sometimes am not clear when trying to involve more people on my models developing. This is the only bad thing I can reflect on when evaluating my contribution to the project. Even though that, as I was a exchange student and our background studies were not the same I think that this fact is more due to our different own learning objectives.
+
 
 #### Reflection on own learning objectives
-&emsp;My own learning objectives during this minor were get a better insight on that _black box_ proccesses which is the way ML models are frequently treated and seen. In my degree in Spain I had already had a subject about artificial intelligence so I was not starting from scratch. 
-&emsp;The fact of facing a real problem, with real data  and real issues on a big project with a non trivial solution and really on the state of the art, has been really rewarding and even though I have much more to learn on data science I have discovered a field to which I would not mind to orientate my application to when I get my studies finished.
+&emsp; In my degree in Spain I had already had a subject about artificial intelligence, so I was not starting from scratch. Thus, my own learning objectives during this minor were specially to get a better insight on that _black box_ processes which is the way ML models are frequently treated and seen and also improve my skills at training models and obtaining the best architecture for them. This objective has been partially reached because the way to afford the task has changed a lot during the project and in the case of the neural networks approaches, I was not able to find solutions to overcome the bad results. On the other hand, the statistical approaches, with the dynamic markov models and the unsupervised version of KNN which was my own idea worked well finally and I had a good insight on how to change hyperparameters to get better results.
+
+&emsp;It is also remarkable the fact that the approaches we have tried were totally different and the data was not labelled so one of my learning objectives that was improving my skills at evaluation and comparing model results has been successfully reached due to the fact that we have came up with different approaches and the only comparison process we could bring about was really dependent on a solid field knowledge and the visualizations of the outcomes of them (that’s why I have put an extra effort on visualizations during the project) to get an overview of what is not normal and how good or bad the implemented models perform that identification.
+
+&emsp;The fact of facing a real problem, with real data  and real issues on a big project with a non trivial solution and really on the state of the art, has been really rewarding and self fulfilling . Even though I have much more to learn on data science I have discovered a field to which I would not mind to orientate my application to when I get my studies finished. So summarizing the balance of the aspects pointed out during this reflection, I can surely say that most of them have by far been reached from a extremely special project in which all the specification was to find anomalies on a huge dataset. This has made me rebrand oneself on most of the standardized phases of data science and learn a lot on bringing about original solutions and evaluation methods to a really open question.
+
 
 #### Evaluation on the group project as a whole
 
-&emsp;The group as a whole has worked really well during the minor and I have learned a lot about my team-mates. We have faced uncertainty moments always with patience to finally reach really good results, taking into acount that this project has a really big scope, in just 6 months with a lot of different advanced approaches, discussing them, brainstorming and definitely helping each other with the best of everyone to get to this point.
+&emsp;The group as a whole has worked really well during the minor and I have learned a lot about my team-mates, hoping that they did also from me. During the semester spent developing the project we have faced uncertainty moments, always with patience to finally reach our main goal: good results combined with valuable models implementation. Taking into account that this project has a really big scope, in just 6 months we came up with a lot of different advanced approaches, we have discussed them, we have had sessions of brainstorming and definitely helping each other with the best of everyone to get to this point.
+
+&emsp;The bad points of the teamwork that can come to my mind was the differences between our product owner and the university goals that lead us to those moments of uncertainty and sometimes even losing motivation. As a team, we have learned a lot from this. At the end of the day this was a specification problem that we will find at the real work world so we have afforded it with this vision, with forbearance and keeping on working on stable tasks not affected by the misunderstanding.
+
+&emsp;Another positive aspect of the group project performance has been the meetings at SAAB TECHNOLOGIES offices at Apeldoorn every other Wednesday, when framed in the sprint retrospective phase of the scrum methodology, we were given the space and time to reflect on both our own work, what went well and what did not go that well both from us seen by the team and from the team seen by us. This was a really good exercise to keep improving little things that make it all go well. Despite this fact, sometimes it was more tiring than expected because the trip from The Hague to Apeldorn was sometimes even longer than the meeting itself.
+
+&emsp;One aspect specially destacable has been the communication during the project in internal terms. As stated before, the field knowledge has been crutial to the project so at the beginning, encouraged by our product owner, we started looking for literature but letting the rest of the team learn of what we read by using presentations to explain the rest of the group how valuable was the paper, also for our meetings at Apeldorn we used presentations as a means of internal communication to present the results and problems before the sprint retrospective to keep Jordi up to date on our day by day work and problems. 
+
 
 ### Conclussion
 
